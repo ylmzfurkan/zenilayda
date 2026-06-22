@@ -227,7 +227,7 @@ const waterOverlayMaterial = new THREE.ShaderMaterial({
     uTexel: { value: new THREE.Vector2(1 / simW, 1 / simH) },
     uStrength: { value: 0.026 },
     uTrailStrength: { value: 0.014 },
-    uOpacity: { value: 0.92 },
+    uOpacity: { value: 0.55 },
   },
   vertexShader: fullscreenVertex,
   fragmentShader: /* glsl */ `
@@ -262,10 +262,10 @@ const waterOverlayMaterial = new THREE.ShaderMaterial({
       vec3 blue = vec3(0.12, 0.48, 0.95);
       vec3 pearl = vec3(0.90, 0.94, 1.0);
 
-      vec3 light = cyan * rim * 0.18;
-      light += pearl * pow(rim, 2.0) * 0.16;
-      light += cyan * trailMask * 0.045;
-      light += blue * pow(trailMask, 2.0) * 0.035;
+      vec3 light = cyan * rim * 0.07;
+      light += pearl * pow(rim, 2.0) * 0.055;
+      light += cyan * trailMask * 0.018;
+      light += blue * pow(trailMask, 2.0) * 0.012;
 
       color += light;
 
