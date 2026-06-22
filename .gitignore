@@ -1,0 +1,14 @@
+# macOS
+.DS_Store
+
+# Yerel talimat/notlar (yayınlanmasın)
+first-page.md
+water.md
+water_v2.md
+anka-kusu.md
+anka-kusu-v2.md
+hero-banner-yazi.md
+
+# Kök kopyalar — assets/ ve models/ içindeki sürümler kullanılıyor
+/v20.glb
+/websitezenilaydakapak.jpg

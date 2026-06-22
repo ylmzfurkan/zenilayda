@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zenilayda — Portfolyo</title>
+  <link rel="stylesheet" href="src/style.css" />
+  <link rel="preload" as="image" href="assets/websitezenilaydakapak.jpg" />
+</head>
+<body>
+  <!-- WebGL su dalgası arka planı buraya render edilir -->
+  <canvas id="scene"></canvas>
+
+  <!-- Üst katman: kahraman bölümü -->
+  <main class="hero">
+    <header class="hero__top">
+      <span class="hero__mark">Zenilayda</span>
+      <nav class="hero__nav">
+        <a href="#work">Çalışmalar</a>
+        <a href="#about">Hakkında</a>
+        <a href="#contact">İletişim</a>
+      </nav>
+    </header>
+
+    <div class="hero-quote">
+      <span class="quote-line quote-what">where <em>inner </em><em>oceans</em></span>
+      <span class="quote-rule quote-rule-wide" style="--rx: 5rem"></span>
+
+      <span class="quote-line quote-through">become <em>stories</em></span>
+      <span class="quote-rule quote-rule-wide" style="--rx: 5rem"></span>
+
+      <span class="quote-line quote-change">and <em>stories</em></span>
+      <span class="quote-rule quote-rule-wide" style="--rx: 5rem"></span>
+
+      <span class="quote-line quote-reinvention">become <em>digital art.</em></span>
+      <span class="quote-rule quote-rule-wide" style="--rx: 5rem"></span>
+    </div>
+  </main>
+
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+      }
+    }
+  </script>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

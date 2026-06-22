@@ -1,0 +1,239 @@
+/* Noomo/Zenilayda fontları */
+@font-face {
+  font-family: "TTNeoris";
+  src: url("../assets/fonts/TTNeoris-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TheSeasons";
+  src: url("../assets/fonts/TheSeasons-Italic.otf") format("opentype");
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+}
+
+:root {
+  --ink: #eafffb;
+  --ink-soft: rgba(234, 255, 251, 0.66);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+  background: #0a3d40;
+}
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* WebGL kanvası tüm ekranı kaplar, en altta durur */
+#scene {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  z-index: 0;
+}
+
+/* Görsel yüklenene kadar yumuşak bir fallback gradyan */
+#scene {
+  background: linear-gradient(180deg, #bcd6cf 0%, #4f9a98 45%, #0c6066 100%);
+}
+
+.hero {
+  position: relative;
+  z-index: 1;
+  height: 100vh;
+  padding: clamp(1.5rem, 4vw, 3rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  pointer-events: none;
+}
+
+.hero a {
+  pointer-events: auto;
+}
+
+.hero__top,
+.hero__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hero__mark {
+  font-size: clamp(1rem, 1.4vw, 1.25rem);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.hero__nav {
+  display: flex;
+  gap: clamp(1.25rem, 3vw, 2.5rem);
+}
+
+.hero__nav a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  font-size: 0.9rem;
+  letter-spacing: 0.06em;
+  transition: color 0.3s ease;
+}
+
+.hero__nav a:hover {
+  color: var(--ink);
+}
+
+.hero__center {
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.hero__title {
+  font-size: clamp(3rem, 11vw, 11rem);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  line-height: 0.95;
+  text-shadow: 0 2px 40px rgba(0, 50, 52, 0.35);
+}
+
+.hero__subtitle {
+  margin-top: 1.25rem;
+  font-size: clamp(0.9rem, 1.6vw, 1.15rem);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.hero__bottom {
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.hero__hint {
+  opacity: 0.8;
+}
+
+/* Sağdaki kahraman alıntı metni (canvas üstü HTML katmanı) */
+.hero-quote {
+  position: fixed;
+  right: 9vw;
+  top: 52%;
+  transform: translateY(-50%);
+  z-index: 5;
+  width: 46vw;
+  pointer-events: none;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 2px 24px rgba(0, 45, 48, 0.22);
+}
+
+.hero-quote {
+  font-family: "TTNeoris", "Helvetica Neue", Arial, sans-serif;
+  font-size: clamp(42px, 4vw, 78px);
+  line-height: 0.86;
+  letter-spacing: -0.04em;
+  font-weight: 400;
+}
+
+.quote-line {
+  display: block;
+  width: max-content;
+  margin-inline: auto;
+  transform: translateX(var(--x, 0));
+}
+
+.quote-what {
+  --x: 1rem;
+}
+
+.quote-guides {
+  --x: -0.3rem;
+}
+
+.quote-through {
+  --x: 4.2rem;
+}
+
+.quote-change {
+  --x: 7.2rem;
+}
+
+.quote-reinvention {
+  --x: 1.1rem;
+}
+
+.quote-unknown {
+  --x: -5rem;
+  white-space: nowrap;
+}
+
+.hero-quote em {
+  font-family: "TheSeasons", Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.03em;
+}
+
+/* Satır araları: ortası parlak, kenarları transparan ışık çizgisi */
+.quote-rule {
+  display: block;
+  height: 2px;
+  width: 22vw;
+  max-width: 420px;
+  margin: 0.06em auto;
+  transform: translateX(var(--rx, 0));
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.5) 50%,
+    transparent 100%
+  );
+}
+
+.quote-rule-short {
+  width: 16vw;
+  max-width: 300px;
+}
+
+.quote-rule-wide {
+  width: 30vw;
+  max-width: 560px;
+}
+
+@media (max-width: 900px) {
+  .hero-quote {
+    right: 6vw;
+    top: auto;
+    bottom: 10vh;
+    transform: none;
+    text-align: right;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero__nav {
+    display: none;
+  }
+  .hero__subtitle {
+    letter-spacing: 0.2em;
+  }
+}
