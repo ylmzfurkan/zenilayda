@@ -34,6 +34,7 @@ html {
 
 body {
   min-height: 100vh;
+  overflow-x: hidden;
   background: #000;
   background-image: linear-gradient(rgba(0, 0, 0, 0.74), rgba(0, 0, 0, 0.74)),
     url("../assets/websitezenilaydakapak.jpg");
@@ -98,6 +99,20 @@ em {
 /* Son menü öğesinin harf-aralığı kuyruğunu iptal et (sağ boşluk = sol boşluk) */
 .site-nav a:last-child {
   margin-right: -0.06em;
+}
+
+/* Hamburger butonu (yalnızca mobilde görünür) */
+.nav-toggle {
+  display: none;
+  position: relative;
+  z-index: 20;
+  padding: 0 0.1em;
+  font-size: 1.7rem;
+  line-height: 1;
+  color: var(--ink);
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
 /* ---------------- Sayfa gövdesi ---------------- */
@@ -624,5 +639,84 @@ em {
   }
   .about__facts {
     position: static;
+  }
+}
+
+/* ============================================================ */
+/* TELEFON (≤600px) — header sığsın, metinler küçülsün          */
+/* ============================================================ */
+@media (max-width: 600px) {
+  /* Üst menü: marka solda, hamburger sağda; menü açılan panel */
+  .site-header {
+    padding: 1.25rem 1.25rem;
+  }
+  .site-header .brand {
+    font-size: 0.95rem;
+    letter-spacing: 0.12em;
+  }
+  .nav-toggle {
+    display: block;
+  }
+  .site-nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 15;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.6rem;
+    min-width: 62vw;
+    padding: 5.5rem 2rem 2.2rem;
+    background: rgba(8, 8, 8, 0.94);
+    backdrop-filter: blur(12px);
+    border-bottom-left-radius: 18px;
+    transform: translateX(110%);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  body.nav-open .site-nav {
+    transform: translateX(0);
+  }
+  .site-nav a {
+    font-size: 1.05rem;
+    letter-spacing: 0.04em;
+    color: var(--ink);
+  }
+  .site-nav a:last-child {
+    margin-right: 0;
+  }
+
+  /* Galeri: metinler ve görsel sığsın */
+  .gallery {
+    padding: 7.5rem 1.25rem 4.5rem;
+    gap: 1.8rem;
+  }
+  .gallery__title {
+    font-size: clamp(2rem, 9vw, 2.8rem);
+  }
+  .gallery__poem {
+    font-size: 0.8rem;
+    line-height: 1.7;
+  }
+  .stage__frame img {
+    max-width: 82vw;
+    max-height: 52vh;
+  }
+  .stage__ph {
+    min-width: 70vw;
+    min-height: 32vh;
+  }
+  .field dd {
+    letter-spacing: 0.06em;
+  }
+
+  /* Hakkında */
+  .about {
+    padding: 8rem 1.25rem 4rem;
+  }
+  .about__name {
+    font-size: clamp(2.4rem, 12vw, 3.4rem);
+  }
+  .about__lead {
+    font-size: clamp(1.2rem, 5vw, 1.5rem);
   }
 }

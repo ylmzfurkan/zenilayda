@@ -325,6 +325,17 @@ const phoenixCamera = new THREE.PerspectiveCamera(
 phoenixCamera.position.set(0, 0, 5.2);
 phoenixCamera.lookAt(0, 0, 0);
 
+// Anka kuşu konumu ekran oranına göre (mobilde dikey ekranda görünür kalsın)
+let phoenixBaseX = -1.1;
+let phoenixBaseY = 0.7;
+function updatePhoenixLayout() {
+  const portrait = window.innerWidth < 768;
+  phoenixCamera.position.z = portrait ? 9 : 5.2;
+  phoenixBaseX = portrait ? 0 : -1.1;
+  phoenixBaseY = portrait ? 1.0 : 0.7;
+}
+updatePhoenixLayout();
+
 // Cam yansımaları için HDR yerine prosedürel ortam (harici dosya gerekmez)
 const pmrem = new THREE.PMREMGenerator(renderer);
 phoenixScene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
@@ -465,7 +476,7 @@ gltfLoader.load(
     phoenix.rotation.set(0.05, -0.42, 0.12);
 
     // Sol üst köşe — ZENİLAYDA yazısının altı (biraz sağa kaydırıldı)
-    phoenixGroup.position.set(-1.1, 0.7, 0);
+    phoenixGroup.position.set(phoenixBaseX, phoenixBaseY, 0);
 
     phoenixGroup.add(phoenix);
     applyBlueGlassMaterial(phoenix);
@@ -608,8 +619,9 @@ function animate() {
 
   if (mixer) mixer.update(delta);
   if (phoenix) {
-    // yumuşak süzülme + mouse'a çok hafif tepki (base konum: 1.05)
-    phoenixGroup.position.y = 0.7 + Math.sin(time * 0.8) * 0.08;
+    // yumuşak süzülme + mouse'a çok hafif tepki (konum ekran oranına göre)
+    phoenixGroup.position.x = phoenixBaseX;
+    phoenixGroup.position.y = phoenixBaseY + Math.sin(time * 0.8) * 0.08;
     phoenixGroup.rotation.z = Math.sin(time * 0.5) * 0.025;
     phoenixGroup.rotation.y = basePhoenixGroupRotationY + (mouse.x - 0.5) * 0.08;
     phoenixGroup.rotation.x = -(mouse.y - 0.5) * 0.08;
@@ -645,6 +657,7 @@ window.addEventListener("resize", () => {
   sceneRT.setSize(w, h);
 
   phoenixCamera.aspect = w / h;
+  updatePhoenixLayout();
   phoenixCamera.updateProjectionMatrix();
 
   simW = Math.round(w * SIM_SCALE);
