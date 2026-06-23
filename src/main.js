@@ -227,7 +227,7 @@ const waterOverlayMaterial = new THREE.ShaderMaterial({
     uTexel: { value: new THREE.Vector2(1 / simW, 1 / simH) },
     uStrength: { value: 0.010 },
     uTrailStrength: { value: 0.002 },
-    uOpacity: { value: 0.10 },
+    uOpacity: { value: 0.20 },
   },
   vertexShader: fullscreenVertex,
   fragmentShader: /* glsl */ `
