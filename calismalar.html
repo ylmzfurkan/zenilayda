@@ -19,29 +19,24 @@
   <main class="gallery" id="gallery">
     <!-- Sol: künye -->
     <aside class="gallery__col gallery__info">
-      <div class="gallery__num" id="g-num">I</div>
-      <span class="pill" id="g-medium"></span>
       <dl class="fields" id="g-fields"></dl>
     </aside>
 
-    <!-- Orta: eser -->
+    <!-- Orta: eser (tıklayınca sonrakine geçer) -->
     <figure class="gallery__col gallery__stage">
-      <div class="stage__frame">
+      <div class="stage__frame" id="g-stage">
         <img id="g-img" alt="" />
         <div class="stage__ph" id="g-ph"></div>
       </div>
-      <figcaption class="gallery__caption" id="g-caption"></figcaption>
     </figure>
 
     <!-- Sağ: metin -->
     <aside class="gallery__col gallery__text">
       <h2 class="gallery__title" id="g-title"></h2>
       <div class="gallery__poem" id="g-poem"></div>
-      <p class="gallery__chamber" id="g-chamber"></p>
     </aside>
 
     <div class="gallery__progress" id="g-progress"></div>
-    <div class="gallery__hint">Scroll · ↑ ↓ ok tuşları</div>
   </main>
 
   <script type="module" src="src/calismalar.js"></script>

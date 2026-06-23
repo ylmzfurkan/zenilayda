@@ -48,6 +48,7 @@ body {
   z-index: 0;
 }
 
+
 /* Görsel yüklenene kadar yumuşak bir fallback gradyan */
 #scene {
   background: linear-gradient(180deg, #bcd6cf 0%, #4f9a98 45%, #0c6066 100%);
@@ -92,13 +93,18 @@ body {
   text-decoration: none;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 500;
-  font-size: 0.9rem;
+  font-size: clamp(0.8rem, 1.3vw, 1rem);
   letter-spacing: 0.06em;
   transition: color 0.3s ease;
 }
 
 .hero__nav a:hover {
   color: var(--ink);
+}
+
+/* Son menü öğesinin harf-aralığı kuyruğunu iptal et (sağ boşluk = sol boşluk) */
+.hero__nav a:last-child {
+  margin-right: -0.06em;
 }
 
 .hero__center {

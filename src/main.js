@@ -211,7 +211,10 @@ const backgroundMaterial = new THREE.ShaderMaterial({
 
     void main() {
       vec2 uv = coverUv(vUv);
-      gl_FragColor = vec4(texture2D(uTexture, uv).rgb, 1.0);
+      // Çalışmalar sayfasıyla aynı: arka planın üstüne %74 siyah (kuş hariç,
+      // çünkü kuş bu arka plandan SONRA çiziliyor -> önde/parlak kalır)
+      vec3 col = texture2D(uTexture, uv).rgb * 0.46;
+      gl_FragColor = vec4(col, 1.0);
     }
   `,
 });
