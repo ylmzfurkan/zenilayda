@@ -90,6 +90,8 @@ body {
 .hero__nav a {
   color: var(--ink-soft);
   text-decoration: none;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 500;
   font-size: 0.9rem;
   letter-spacing: 0.06em;
   transition: color 0.3s ease;

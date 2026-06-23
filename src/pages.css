@@ -1,0 +1,497 @@
+/* Alt sayfalar (Çalışmalar / Hakkında / İletişim) — düz siyah arka plan */
+
+@font-face {
+  font-family: "TTNeoris";
+  src: url("../assets/fonts/TTNeoris-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TheSeasons";
+  src: url("../assets/fonts/TheSeasons-Italic.otf") format("opentype");
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+}
+
+:root {
+  --ink: #f2f2f2;
+  --ink-soft: rgba(242, 242, 242, 0.55);
+  --line: rgba(255, 255, 255, 0.12);
+  --gold: #c2a37a;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background: #000;
+  color: var(--ink);
+  font-family: "TTNeoris", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: -0.01em;
+}
+
+em {
+  font-family: "TheSeasons", Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+}
+
+/* ---------------- Üst menü ---------------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: clamp(1.2rem, 3vw, 2rem) clamp(1.5rem, 5vw, 4rem);
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+
+.site-header .brand {
+  font-size: clamp(1rem, 1.4vw, 1.2rem);
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.site-nav {
+  display: flex;
+  gap: clamp(1.25rem, 3vw, 2.5rem);
+}
+
+.site-nav a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  font-size: 0.9rem;
+  letter-spacing: 0.06em;
+  transition: color 0.3s ease;
+}
+
+.site-nav a:hover,
+.site-nav a[aria-current="page"] {
+  color: var(--ink);
+}
+
+/* ---------------- Sayfa gövdesi ---------------- */
+.page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: clamp(3rem, 9vw, 8rem) clamp(1.5rem, 5vw, 4rem) 6rem;
+}
+
+.page__eyebrow {
+  font-size: 0.8rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: 1rem;
+}
+
+.page__title {
+  font-size: clamp(2.6rem, 8vw, 6rem);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  margin-bottom: clamp(2rem, 5vw, 3.5rem);
+}
+
+.page__lead {
+  max-width: 60ch;
+  font-size: clamp(1.05rem, 1.6vw, 1.35rem);
+  line-height: 1.6;
+  color: rgba(242, 242, 242, 0.82);
+}
+
+/* ---------------- Çalışmalar grid ---------------- */
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  margin-top: 3rem;
+}
+
+.work-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow: hidden;
+  background: #0a0a0a;
+  transition: transform 0.4s ease, border-color 0.4s ease;
+}
+
+.work-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.work-card__thumb {
+  aspect-ratio: 4 / 3;
+  background: linear-gradient(135deg, #123c40, #0a1e26 70%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.work-card__body {
+  padding: 1.25rem 1.4rem 1.6rem;
+}
+
+.work-card__title {
+  font-size: 1.3rem;
+  margin-bottom: 0.35rem;
+}
+
+.work-card__meta {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  letter-spacing: 0.04em;
+}
+
+/* ---------------- Hakkında ---------------- */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: clamp(2rem, 6vw, 5rem);
+  align-items: start;
+  margin-top: 2rem;
+}
+
+.about-grid p + p {
+  margin-top: 1.25rem;
+}
+
+.about-aside h3 {
+  font-size: 0.8rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin: 1.6rem 0 0.6rem;
+}
+
+.about-aside ul {
+  list-style: none;
+}
+
+.about-aside li {
+  padding: 0.35rem 0;
+  border-bottom: 1px solid var(--line);
+  color: rgba(242, 242, 242, 0.85);
+}
+
+/* ---------------- İletişim ---------------- */
+.contact-mail {
+  display: inline-block;
+  font-size: clamp(1.8rem, 5vw, 3.5rem);
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 0.2em;
+  transition: border-color 0.3s ease;
+}
+
+.contact-mail:hover {
+  border-color: var(--ink);
+}
+
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem 2.5rem;
+  margin-top: 3rem;
+}
+
+.contact-links a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+  transition: color 0.3s ease;
+}
+
+.contact-links a:hover {
+  color: var(--ink);
+}
+
+/* ---------------- Alt bilgi ---------------- */
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding: 2rem clamp(1.5rem, 5vw, 4rem);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 760px) {
+  .site-nav {
+    gap: 1.1rem;
+  }
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================================ */
+/* ÇALIŞMALAR — interaktif galeri (ok tuşları / scroll ile gez) */
+/* ============================================================ */
+.gallery-page {
+  overflow: hidden;
+}
+
+.site-header--ghost {
+  position: fixed;
+  left: 0;
+  right: 0;
+  background: transparent;
+  backdrop-filter: none;
+  border-bottom: none;
+}
+
+.gallery {
+  position: relative;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: minmax(240px, 1fr) minmax(0, 1.5fr) minmax(240px, 1fr);
+  align-items: center;
+  gap: clamp(1.5rem, 4vw, 4rem);
+  padding: 0 clamp(1.5rem, 5vw, 5rem);
+}
+
+.gallery__col {
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.gallery.is-anim .gallery__col {
+  opacity: 0;
+  transform: translateY(14px);
+}
+
+/* ---- Sol: künye ---- */
+.gallery__info {
+  position: relative;
+}
+
+.gallery__num {
+  position: absolute;
+  left: -0.08em;
+  top: -0.5em;
+  font-family: "TheSeasons", serif;
+  font-style: italic;
+  font-size: clamp(8rem, 15vw, 15rem);
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.05);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.gallery__info > *:not(.gallery__num) {
+  position: relative;
+  z-index: 1;
+}
+
+.pill {
+  display: inline-block;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  border-radius: 999px;
+  padding: 0.55em 1.3em;
+  margin-bottom: 2.2rem;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+
+.fields {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+}
+
+.field dt {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: 0.4rem;
+}
+
+.field dd {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  font-size: clamp(0.95rem, 1.1vw, 1.05rem);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+/* ---- Orta: eser ---- */
+.gallery__stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.stage__frame {
+  position: relative;
+  max-height: 66vh;
+  background: linear-gradient(135deg, #161616, #0a0a0a);
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+}
+
+.stage__frame img {
+  display: block;
+  max-width: 44vw;
+  max-height: 66vh;
+  width: auto;
+  height: auto;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.stage__frame img.loaded {
+  opacity: 1;
+}
+
+.stage__ph {
+  position: absolute;
+  inset: 0;
+  min-width: 30vw;
+  min-height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  color: var(--ink-soft);
+  font-family: "TheSeasons", serif;
+  font-style: italic;
+  font-size: 1.1rem;
+  transition: opacity 0.4s ease;
+}
+
+.stage__frame img.loaded ~ .stage__ph {
+  opacity: 0;
+}
+
+.gallery__caption {
+  margin-top: 1.5rem;
+  font-family: "TheSeasons", serif;
+  font-style: italic;
+  font-size: 0.95rem;
+  letter-spacing: 0.03em;
+  color: rgba(242, 242, 242, 0.5);
+  text-align: center;
+}
+
+/* ---- Sağ: metin ---- */
+.gallery__title {
+  font-family: "TheSeasons", serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(2.2rem, 3.4vw, 3.6rem);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  margin-bottom: 2rem;
+}
+
+.gallery__poem {
+  font-family: "TheSeasons", serif;
+  font-style: italic;
+  font-size: clamp(1rem, 1.25vw, 1.22rem);
+  line-height: 1.8;
+  color: rgba(242, 242, 242, 0.82);
+}
+
+.gallery__chamber {
+  margin-top: 2.2rem;
+  color: var(--gold);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  font-size: 0.8rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+.gallery__chamber::before {
+  content: "— ";
+}
+
+/* ---- Alt: ilerleme + ipucu ---- */
+.gallery__progress {
+  position: fixed;
+  left: 50%;
+  bottom: 2rem;
+  transform: translateX(-50%);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.25em;
+  color: var(--ink-soft);
+}
+
+.gallery__hint {
+  position: fixed;
+  right: 2rem;
+  bottom: 2rem;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+@media (max-width: 900px) {
+  .gallery-page {
+    overflow: auto;
+  }
+  .gallery {
+    grid-template-columns: 1fr;
+    height: auto;
+    min-height: 100vh;
+    padding: 6rem 1.5rem 5rem;
+    gap: 2.5rem;
+  }
+  .gallery__num {
+    display: none;
+  }
+  .stage__frame img {
+    max-width: 86vw;
+  }
+  .gallery__hint {
+    display: none;
+  }
+}

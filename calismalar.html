@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Çalışmalar — Zenilayda</title>
+  <link rel="stylesheet" href="src/pages.css" />
+</head>
+<body class="gallery-page">
+  <header class="site-header site-header--ghost">
+    <a class="brand" href="index.html">Zenilayda</a>
+    <nav class="site-nav">
+      <a href="calismalar.html" aria-current="page">Çalışmalar</a>
+      <a href="hakkinda.html">Hakkında</a>
+      <a href="iletisim.html">İletişim</a>
+    </nav>
+  </header>
+
+  <main class="gallery" id="gallery">
+    <!-- Sol: künye -->
+    <aside class="gallery__col gallery__info">
+      <div class="gallery__num" id="g-num">I</div>
+      <span class="pill" id="g-medium"></span>
+      <dl class="fields" id="g-fields"></dl>
+    </aside>
+
+    <!-- Orta: eser -->
+    <figure class="gallery__col gallery__stage">
+      <div class="stage__frame">
+        <img id="g-img" alt="" />
+        <div class="stage__ph" id="g-ph"></div>
+      </div>
+      <figcaption class="gallery__caption" id="g-caption"></figcaption>
+    </figure>
+
+    <!-- Sağ: metin -->
+    <aside class="gallery__col gallery__text">
+      <h2 class="gallery__title" id="g-title"></h2>
+      <div class="gallery__poem" id="g-poem"></div>
+      <p class="gallery__chamber" id="g-chamber"></p>
+    </aside>
+
+    <div class="gallery__progress" id="g-progress"></div>
+    <div class="gallery__hint">Scroll · ↑ ↓ ok tuşları</div>
+  </main>
+
+  <script type="module" src="src/calismalar.js"></script>
+</body>
+</html>
