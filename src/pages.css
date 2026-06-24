@@ -658,10 +658,13 @@ em {
     top: 50%;
     transform: translate(-50%, -50%);
     font-size: 0.95rem;
+    line-height: 1;
     letter-spacing: 0.12em;
   }
   .nav-toggle {
-    display: block;
+    display: flex;
+    align-items: center;
+    top: -2px;
   }
   .site-nav {
     position: fixed;
