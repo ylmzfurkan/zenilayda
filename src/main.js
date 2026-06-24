@@ -332,7 +332,7 @@ function updatePhoenixLayout() {
   const portrait = window.innerWidth < 768;
   phoenixCamera.position.z = portrait ? 9 : 5.2;
   phoenixBaseX = portrait ? 0 : -1.1;
-  phoenixBaseY = portrait ? 1.0 : 0.7;
+  phoenixBaseY = portrait ? 1.6 : 0.7;
 }
 updatePhoenixLayout();
 

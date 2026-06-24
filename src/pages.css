@@ -650,7 +650,7 @@ em {
   .site-header {
     padding: 1.25rem 1.25rem;
     position: relative;
-    justify-content: flex-end;
+    justify-content: flex-start;
   }
   .site-header .brand {
     position: absolute;
@@ -665,19 +665,19 @@ em {
   .site-nav {
     position: fixed;
     top: 0;
-    right: 0;
+    left: 0;
     z-index: 15;
     flex-direction: column;
-    align-items: flex-end;
-    text-align: right;
+    align-items: flex-start;
+    text-align: left;
     gap: 1.6rem;
     width: max-content;
     max-width: 80vw;
     padding: 5.5rem 1.6rem 1.8rem;
     background: transparent;
     backdrop-filter: blur(6px);
-    border-bottom-left-radius: 18px;
-    transform: translateX(110%);
+    border-bottom-right-radius: 18px;
+    transform: translateX(-110%);
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
   body.nav-open .site-nav {
@@ -694,7 +694,7 @@ em {
 
   /* Galeri: metinler ve görsel sığsın */
   .gallery {
-    padding: 7.5rem 1.25rem 4.5rem;
+    padding: 5.25rem 1.25rem 4.5rem;
     gap: 1.8rem;
   }
   .gallery__title {
@@ -712,18 +712,26 @@ em {
     min-width: 70vw;
     min-height: 32vh;
   }
+  .field dt {
+    font-size: 0.62rem;
+  }
   .field dd {
     letter-spacing: 0.06em;
+    font-size: clamp(0.82rem, 3.2vw, 0.92rem);
   }
 
   /* Hakkında */
   .about {
-    padding: 8rem 1.25rem 4rem;
+    padding: 5.5rem 1.25rem 4rem;
   }
   .about__name {
-    font-size: clamp(2.4rem, 12vw, 3.4rem);
+    font-size: clamp(2rem, 9.5vw, 2.8rem);
+    margin-bottom: clamp(1.6rem, 5vw, 2.4rem);
   }
   .about__lead {
-    font-size: clamp(1.2rem, 5vw, 1.5rem);
+    font-size: clamp(1.05rem, 4.2vw, 1.3rem);
+  }
+  .about__body p {
+    font-size: clamp(0.92rem, 3.4vw, 1.02rem);
   }
 }

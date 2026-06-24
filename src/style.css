@@ -272,10 +272,10 @@ body {
   .hero {
     padding: 1.25rem 1.25rem;
   }
-  /* Hamburger sağda, marka üstte ortalı */
+  /* Hamburger solda, marka üstte ortalı */
   .hero__top {
     position: relative;
-    justify-content: flex-end;
+    justify-content: flex-start;
   }
   .hero__mark {
     position: absolute;
@@ -292,19 +292,19 @@ body {
   .hero__nav {
     position: fixed;
     top: 0;
-    right: 0;
+    left: 0;
     z-index: 15;
     flex-direction: column;
-    align-items: flex-end;
-    text-align: right;
+    align-items: flex-start;
+    text-align: left;
     gap: 1.6rem;
     width: max-content;
     max-width: 80vw;
     padding: 5.5rem 1.6rem 1.8rem;
     background: transparent;
     backdrop-filter: blur(6px);
-    border-bottom-left-radius: 18px;
-    transform: translateX(110%);
+    border-bottom-right-radius: 18px;
+    transform: translateX(-110%);
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     pointer-events: auto;
   }
@@ -321,9 +321,9 @@ body {
   }
   .hero-quote {
     left: 1.25rem;
-    bottom: 14vh;
+    bottom: 18vh;
     max-width: none;
     right: 1.25rem;
-    font-size: clamp(30px, 8.5vw, 48px);
+    font-size: clamp(26px, 7.4vw, 42px);
   }
 }
