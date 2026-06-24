@@ -661,45 +661,22 @@ em {
     line-height: 1;
     letter-spacing: 0.12em;
   }
+  /* Üst menü ve hamburger mobilde gizli — alt sekme çubuğu (tabbar) kullanılır */
   .nav-toggle {
-    display: flex;
-    align-items: center;
-    top: -2px;
+    display: none;
   }
   .site-nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 15;
-    flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
-    gap: 1.6rem;
-    width: max-content;
-    max-width: 80vw;
-    padding: 5.5rem 1.6rem 1.8rem;
-    background: transparent;
-    backdrop-filter: blur(6px);
-    border-bottom-right-radius: 18px;
-    transform: translateX(-110%);
-    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  body.nav-open .site-nav {
-    transform: translateX(0);
-  }
-  .site-nav a {
-    font-size: 1.05rem;
-    letter-spacing: 0.04em;
-    color: var(--ink);
-  }
-  .site-nav a:last-child {
-    margin-right: 0;
+    display: none;
   }
 
   /* Galeri: metinler ve görsel sığsın */
   .gallery {
-    padding: 5.25rem 1.25rem 4.5rem;
+    padding: 5.25rem 1.25rem 7rem;
     gap: 1.8rem;
+  }
+  /* Sayaç, alt sekme çubuğunun üstünde kalsın */
+  .gallery__progress {
+    bottom: 5.4rem;
   }
   .gallery__title {
     font-size: clamp(2rem, 9vw, 2.8rem);
@@ -724,9 +701,14 @@ em {
     font-size: clamp(0.82rem, 3.2vw, 0.92rem);
   }
 
+  /* İletişim ve diğer sayfa gövdeleri alt çubuğun arkasında kalmasın */
+  .page {
+    padding-bottom: 7rem;
+  }
+
   /* Hakkında */
   .about {
-    padding: 5.5rem 1.25rem 4rem;
+    padding: 5.5rem 1.25rem 7rem;
   }
   .about__name {
     font-size: clamp(2rem, 9.5vw, 2.8rem);
@@ -737,5 +719,55 @@ em {
   }
   .about__body p {
     font-size: clamp(0.92rem, 3.4vw, 1.02rem);
+  }
+}
+
+/* ============================================================ */
+/* MOBİL ALT SEKME ÇUBUĞU (tabbar)                              */
+/* ============================================================ */
+.tabbar {
+  display: none;
+  position: fixed;
+  z-index: 40;
+  left: 50%;
+  bottom: 0.9rem;
+  transform: translateX(-50%);
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.25rem;
+  width: calc(100% - 1.6rem);
+  max-width: 440px;
+  padding: 0.35rem;
+  background: rgba(12, 14, 16, 0.55);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+  box-shadow: 0 12px 34px rgba(0, 0, 0, 0.4);
+}
+
+.tabbar a {
+  flex: 1;
+  text-align: center;
+  white-space: nowrap;
+  padding: 0.7rem 0.4rem;
+  border-radius: 999px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  font-size: 0.74rem;
+  letter-spacing: 0.01em;
+  color: var(--ink-soft);
+  text-decoration: none;
+  transition: color 0.25s ease, background 0.25s ease;
+}
+
+.tabbar a[aria-current="page"] {
+  color: #0c0e10;
+  background: var(--ink);
+}
+
+@media (max-width: 600px) {
+  .tabbar {
+    display: flex;
   }
 }

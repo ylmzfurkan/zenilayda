@@ -287,41 +287,12 @@ body {
     letter-spacing: 0.12em;
   }
 
-  /* Hamburger görünür, menü sağ üstten açılan panel */
+  /* Üst menü ve hamburger mobilde gizli — alt sekme çubuğu (tabbar) kullanılır */
   .nav-toggle {
-    display: flex;
-    align-items: center;
-    top: -2px;
+    display: none;
   }
   .hero__nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 15;
-    flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
-    gap: 1.6rem;
-    width: max-content;
-    max-width: 80vw;
-    padding: 5.5rem 1.6rem 1.8rem;
-    background: transparent;
-    backdrop-filter: blur(6px);
-    border-bottom-right-radius: 18px;
-    transform: translateX(-110%);
-    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    pointer-events: auto;
-  }
-  body.nav-open .hero__nav {
-    transform: translateX(0);
-  }
-  .hero__nav a {
-    font-size: 1.05rem;
-    letter-spacing: 0.04em;
-    color: var(--ink);
-  }
-  .hero__nav a:last-child {
-    margin-right: 0;
+    display: none;
   }
   .hero-quote {
     left: 1.25rem;
@@ -329,5 +300,56 @@ body {
     max-width: none;
     right: 1.25rem;
     font-size: clamp(26px, 7.4vw, 42px);
+  }
+}
+
+/* ============================================================ */
+/* MOBİL ALT SEKME ÇUBUĞU (tabbar)                              */
+/* ============================================================ */
+.tabbar {
+  display: none;
+  position: fixed;
+  z-index: 40;
+  left: 50%;
+  bottom: 0.9rem;
+  transform: translateX(-50%);
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.25rem;
+  width: calc(100% - 1.6rem);
+  max-width: 440px;
+  padding: 0.35rem;
+  background: rgba(6, 28, 30, 0.5);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(234, 255, 251, 0.18);
+  border-radius: 999px;
+  box-shadow: 0 12px 34px rgba(0, 30, 32, 0.4);
+  pointer-events: auto;
+}
+
+.tabbar a {
+  flex: 1;
+  text-align: center;
+  white-space: nowrap;
+  padding: 0.7rem 0.4rem;
+  border-radius: 999px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  font-size: 0.74rem;
+  letter-spacing: 0.01em;
+  color: var(--ink-soft);
+  text-decoration: none;
+  transition: color 0.25s ease, background 0.25s ease;
+}
+
+.tabbar a[aria-current="page"] {
+  color: #06201f;
+  background: var(--ink);
+}
+
+@media (max-width: 600px) {
+  .tabbar {
+    display: flex;
   }
 }

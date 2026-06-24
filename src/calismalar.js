@@ -151,22 +151,32 @@ window.addEventListener("keydown", (e) => {
   }
 });
 
-/* --- Dokunmatik kaydırma --- */
-let touchY = null;
+/* --- Dokunmatik kaydırma (yalnızca YATAY: sağ/sol) ---
+ * Mobilde dikey (aşağı) kaydırma sayfayı kaydırır, eser geçişi yapmaz.
+ * Eserler arası geçiş sadece görsele tıklayınca ya da yatay kaydırınca olur.
+ */
+let touchX = null;
+let touchYStart = null;
 window.addEventListener(
   "touchstart",
   (e) => {
-    touchY = e.touches[0].clientY;
+    touchX = e.touches[0].clientX;
+    touchYStart = e.touches[0].clientY;
   },
   { passive: true }
 );
 window.addEventListener(
   "touchend",
   (e) => {
-    if (touchY === null) return;
-    const dy = touchY - e.changedTouches[0].clientY;
-    if (Math.abs(dy) > 40) go(dy > 0 ? 1 : -1);
-    touchY = null;
+    if (touchX === null) return;
+    const dx = touchX - e.changedTouches[0].clientX;
+    const dy = touchYStart - e.changedTouches[0].clientY;
+    // Yalnızca yatay baskın kaydırmada geçiş yap (dikey kaydırmayı yok say)
+    if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) {
+      go(dx > 0 ? 1 : -1);
+    }
+    touchX = null;
+    touchYStart = null;
   },
   { passive: true }
 );
