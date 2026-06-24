@@ -655,7 +655,8 @@ em {
   .site-header .brand {
     position: absolute;
     left: 50%;
-    transform: translateX(-50%);
+    top: 50%;
+    transform: translate(-50%, -50%);
     font-size: 0.95rem;
     letter-spacing: 0.12em;
   }
