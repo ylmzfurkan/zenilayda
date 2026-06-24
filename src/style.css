@@ -272,7 +272,15 @@ body {
   .hero {
     padding: 1.25rem 1.25rem;
   }
+  /* Hamburger sağda, marka üstte ortalı */
+  .hero__top {
+    position: relative;
+    justify-content: flex-end;
+  }
   .hero__mark {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     font-size: 0.95rem;
     letter-spacing: 0.12em;
   }
@@ -287,12 +295,14 @@ body {
     right: 0;
     z-index: 15;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: flex-end;
+    text-align: right;
     gap: 1.6rem;
-    min-width: 62vw;
-    padding: 5.5rem 2rem 2.2rem;
-    background: rgba(8, 22, 24, 0.92);
-    backdrop-filter: blur(12px);
+    width: max-content;
+    max-width: 80vw;
+    padding: 5.5rem 1.6rem 1.8rem;
+    background: transparent;
+    backdrop-filter: blur(6px);
     border-bottom-left-radius: 18px;
     transform: translateX(110%);
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
