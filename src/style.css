@@ -295,13 +295,19 @@ body {
     display: none;
   }
   .hero-quote {
-    /* Metni sola yapışık değil, biraz sağa kaydırmak için "left" değerini artır
-       (ör. 8vw → 14vw daha sağa götürür). "right" sağ kenardan boşluğu korur. */
-    left: 30vw;
+    /* Metni olduğu yerde (aynı dikey konumda) sayfaya yatay ortala */
+    left: 1.25rem;
+    right: 1.25rem;
     bottom: 18vh;
     max-width: none;
-    right: 1.25rem;
+    text-align: center;
     font-size: clamp(26px, 7.4vw, 42px);
+  }
+  .hero-quote .quote-line {
+    margin-inline: auto;
+  }
+  .hero-quote .quote-rule {
+    margin-inline: auto;
   }
 }
 
