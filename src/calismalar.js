@@ -13,20 +13,20 @@ const WORKS = [
     numeral: "I",
     image: "assets/works/vatoz-cerceve.webp",
     fields: [
-      { label: "Designed for", value: "" },
-      { label: "Date", value: "" },
+      { label: "Designed for", value: "Kuzey Home x Mikasa Moor" },
+      { label: "Date", value: "2024" },
       { label: "Designed by", value: "İlayda Özen" },
     ],
     title: "VATOZ",
     poem:
-      "Vatoz isimli tablomu, Mikasa Moor markasının kendi pirinç vatoz aksesuarlarına uyumlu olacak şekilde tasarladım. İlk başta soyut sabit renklerdeki bir arkaplanda düşündüğüm bu tabloyu, objesi vatoz olduğu için organik bir forma taşıma ihtiyacı hissedip onları kendi yaşam alanına su altına yerleştirdim. Böylece çok daha organik ve akışta olan bir tablo oldu.<br /><br />Tablonun adet ölçüsü: 65x125 cm - cam baskıdır.",
+      "Vatoz isimli tablomu, Mikasa Moor markasının kendi pirinç vatoz aksesuarlarına uyumlu olacak şekilde tasarladım. İlk başta soyut sabit renklerdeki bir arka planda düşündüğüm bu tabloyu, objesi vatoz olduğu için organik bir forma taşıma ihtiyacı hissedip onları kendi yaşam alanına su altına yerleştirdim. Böylece çok daha organik ve akışta olan bir tablo oldu.<br /><br />Tablonun adet ölçüsü: 65x125 cm - cam baskıdır.",
   },
   {
     numeral: "II",
     image: "assets/works/sutun.webp",
     fields: [
-      { label: "Designed for", value: "" },
-      { label: "Date", value: "" },
+      { label: "Designed for", value: "Kuzey Home x Mikasa Moor" },
+      { label: "Date", value: "2024" },
       { label: "Designed by", value: "İlayda Özen" },
     ],
     title: "SÜTUN",
@@ -37,8 +37,8 @@ const WORKS = [
     numeral: "III",
     image: "assets/works/tapinak-tablo.webp",
     fields: [
-      { label: "Designed for", value: "" },
-      { label: "Date", value: "" },
+      { label: "Designed for", value: "Kuzey Home x Mikasa Moor" },
+      { label: "Date", value: "2024" },
       { label: "Designed by", value: "İlayda Özen" },
     ],
     title: "TAPINAK",
@@ -49,20 +49,20 @@ const WORKS = [
     numeral: "IV",
     image: "assets/works/girl-cerceve.webp",
     fields: [
-      { label: "Designed for", value: "" },
-      { label: "Date", value: "" },
+      { label: "Designed for", value: "Kuzey Home x Mikasa Moor" },
+      { label: "Date", value: "2024" },
       { label: "Designed by", value: "İlayda Özen" },
     ],
     title: "DENGE",
     poem:
-      "Denge isimli tablomu, Mikasa Moor markası için tasarladığım bu tabloda sulu boya efekti kullandım. Bir kadının içindeki iki farklı ruh halini temsil ettim aslında.<br /><br />Tablonun ölçüsü: 90x120 cm - cam baskıdır.",
+      "Denge isimli, Mikasa Moor markası için tasarladığım bu tabloda sulu boya efekti kullandım. Bir kadının içindeki iki farklı ruh halini temsil ettim aslında.<br /><br />Tablonun ölçüsü: 90x120 cm - cam baskıdır.",
   },
   {
     numeral: "V",
     image: "assets/works/yesil-heykel.webp",
     fields: [
-      { label: "Designed for", value: "" },
-      { label: "Date", value: "" },
+      { label: "Designed for", value: "Kuzey Home x Mikasa Moor" },
+      { label: "Date", value: "2024" },
       { label: "Designed by", value: "İlayda Özen" },
     ],
     title: "FEMINEN",
