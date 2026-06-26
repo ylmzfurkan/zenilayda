@@ -796,10 +796,29 @@ em {
   }
 
   /* İletişim ve diğer sayfa gövdeleri: üstte header'ı, altta sekme çubuğunu boşalt
-     (başlık, Hakkında'daki "İlayda Özen" ile aynı hizada başlasın) */
+     (başlık, Hakkında'daki "İlayda Özen" ile aynı hizada başlasın; yan boşluk da
+     Hakkında ile aynı 1.25rem olsun) */
   .page {
-    padding-top: 3.75rem;
-    padding-bottom: 7rem;
+    padding: 3.75rem 1.25rem 7rem;
+  }
+
+  /* Sosyal kanallar mobilde: kart kenar boşluğu yüzünden içerik sağa kaçıyordu.
+     Kartları sade bir listeye çevirip yazıları başlık/e-posta ile aynı sol
+     çizgide hizala (arttaki ok sağda kalır). */
+  .contact__channels {
+    gap: 0;
+  }
+  .channel {
+    padding: 1.05rem 0;
+    border: 0;
+    border-bottom: 1px solid var(--line);
+    border-radius: 0;
+    background: none;
+  }
+  .channel:hover {
+    transform: none;
+    background: none;
+    border-color: var(--line);
   }
 
   /* Hakkında */
