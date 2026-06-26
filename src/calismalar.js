@@ -13,9 +13,9 @@ const WORKS = [
     numeral: "I",
     image: "assets/works/vatoz-cerceve.webp",
     fields: [
-      { label: "Designed for", value: "Kuzey Home x Mikasa Moor" },
+      { label: "Desıgned for", value: "Kuzey Home x Mikasa Moor" },
       { label: "Date", value: "2024" },
-      { label: "Designed by", value: "İlayda Özen" },
+      { label: "Desıgned by", value: "İlayda Özen" },
     ],
     title: "VATOZ",
     poem:
@@ -25,9 +25,9 @@ const WORKS = [
     numeral: "II",
     image: "assets/works/sutun.webp",
     fields: [
-      { label: "Designed for", value: "Kuzey Home x Mikasa Moor" },
+      { label: "Desıgned for", value: "Kuzey Home x Mikasa Moor" },
       { label: "Date", value: "2024" },
-      { label: "Designed by", value: "İlayda Özen" },
+      { label: "Desıgned by", value: "İlayda Özen" },
     ],
     title: "SÜTUN",
     poem:
@@ -37,9 +37,9 @@ const WORKS = [
     numeral: "III",
     image: "assets/works/tapinak-tablo.webp",
     fields: [
-      { label: "Designed for", value: "Kuzey Home x Mikasa Moor" },
+      { label: "Desıgned for", value: "Kuzey Home x Mikasa Moor" },
       { label: "Date", value: "2024" },
-      { label: "Designed by", value: "İlayda Özen" },
+      { label: "Desıgned by", value: "İlayda Özen" },
     ],
     title: "TAPINAK",
     poem:
@@ -49,9 +49,9 @@ const WORKS = [
     numeral: "IV",
     image: "assets/works/girl-cerceve.webp",
     fields: [
-      { label: "Designed for", value: "Kuzey Home x Mikasa Moor" },
+      { label: "Desıgned for", value: "Kuzey Home x Mikasa Moor" },
       { label: "Date", value: "2024" },
-      { label: "Designed by", value: "İlayda Özen" },
+      { label: "Desıgned by", value: "İlayda Özen" },
     ],
     title: "DENGE",
     poem:
@@ -61,9 +61,9 @@ const WORKS = [
     numeral: "V",
     image: "assets/works/yesil-heykel.webp",
     fields: [
-      { label: "Designed for", value: "Kuzey Home x Mikasa Moor" },
+      { label: "Desıgned for", value: "Kuzey Home x Mikasa Moor" },
       { label: "Date", value: "2024" },
-      { label: "Designed by", value: "İlayda Özen" },
+      { label: "Desıgned by", value: "İlayda Özen" },
     ],
     title: "FEMINEN",
     poem:
