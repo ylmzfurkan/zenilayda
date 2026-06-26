@@ -826,7 +826,7 @@ em {
   position: fixed;
   z-index: 40;
   left: 50%;
-  bottom: 0.9rem;
+  bottom: 0.4rem;
   transform: translateX(-50%);
   justify-content: space-between;
   align-items: center;

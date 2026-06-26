@@ -295,7 +295,9 @@ body {
     display: none;
   }
   .hero-quote {
-    left: 1.25rem;
+    /* Metni sola yapışık değil, biraz sağa kaydırmak için "left" değerini artır
+       (ör. 8vw → 14vw daha sağa götürür). "right" sağ kenardan boşluğu korur. */
+    left: 30vw;
     bottom: 18vh;
     max-width: none;
     right: 1.25rem;
@@ -311,7 +313,7 @@ body {
   position: fixed;
   z-index: 40;
   left: 50%;
-  bottom: 0.9rem;
+  bottom: 0.4rem;
   transform: translateX(-50%);
   justify-content: space-between;
   align-items: center;
