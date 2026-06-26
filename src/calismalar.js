@@ -11,55 +11,63 @@
 const WORKS = [
   {
     numeral: "I",
-    image:
-      "https://commons.wikimedia.org/wiki/Special:FilePath/Sandro_Botticelli_-_La_nascita_di_Venere_-_Google_Art_Project_-_edited.jpg?width=1100",
+    image: "assets/works/vatoz-cerceve.webp",
     fields: [
-      { label: "Designed for", value: "The Birth of Venus" },
-      { label: "Date", value: "c. 1485" },
-      { label: "Designed by", value: "Sandro Botticelli" },
+      { label: "Designed for", value: "" },
+      { label: "Date", value: "" },
+      { label: "Designed by", value: "İlayda Özen" },
     ],
-    title: "Light<br />as a beginning.",
+    title: "VATOZ",
     poem:
-      "A shell brushes the shore.<br />The goddess arrives, never having travelled.<br /><br />The wind pushes her, flowers cover her.<br />The world, suddenly, begins again.",
+      "Vatoz isimli tablomu, Mikasa Moor markasının kendi pirinç vatoz aksesuarlarına uyumlu olacak şekilde tasarladım. İlk başta soyut sabit renklerdeki bir arkaplanda düşündüğüm bu tabloyu, objesi vatoz olduğu için organik bir forma taşıma ihtiyacı hissedip onları kendi yaşam alanına su altına yerleştirdim. Böylece çok daha organik ve akışta olan bir tablo oldu.<br /><br />Tablonun adet ölçüsü: 65x125 cm - cam baskıdır.",
   },
   {
     numeral: "II",
-    image:
-      "https://commons.wikimedia.org/wiki/Special:FilePath/1665_Girl_with_a_Pearl_Earring.jpg?width=1000",
+    image: "assets/works/sutun.webp",
     fields: [
-      { label: "Designed for", value: "Girl with a Pearl Earring" },
-      { label: "Date", value: "c. 1665" },
-      { label: "Designed by", value: "Johannes Vermeer" },
+      { label: "Designed for", value: "" },
+      { label: "Date", value: "" },
+      { label: "Designed by", value: "İlayda Özen" },
     ],
-    title: "A glance<br />held still.",
+    title: "SÜTUN",
     poem:
-      "She turns, only for a moment.<br />A pearl catches the last of the light.<br /><br />Nothing is said, yet everything waits<br />in the quiet between two breaths.",
+      "Sütun isimli tablomu, Mikasa Moor markasının butik koleksiyonu için tasarladım. Antik Roma mimarisinden esinlendiğim bu tasarımda iki farklı sütunu aynı kanvas içinde görüyoruz. Zarif mimari detaylar ve aynı tonlar…<br /><br />Tablonun ölçüsü: 90x120 cm - cam baskıdır.",
   },
   {
     numeral: "III",
-    image:
-      "https://commons.wikimedia.org/wiki/Special:FilePath/Tsunami_by_hokusai_19th_century.jpg?width=1100",
+    image: "assets/works/tapinak-tablo.webp",
     fields: [
-      { label: "Designed for", value: "The Great Wave" },
-      { label: "Date", value: "c. 1831" },
-      { label: "Designed by", value: "Katsushika Hokusai" },
+      { label: "Designed for", value: "" },
+      { label: "Date", value: "" },
+      { label: "Designed by", value: "İlayda Özen" },
     ],
-    title: "The sea<br />remembers.",
+    title: "TAPINAK",
     poem:
-      "A wave rises, taller than the mountain.<br />Foam reaches like fingers toward the sky.<br /><br />Beneath it, small boats hold their breath,<br />and the world tilts for an instant.",
+      "Tapınak isimli tablomu, Mikasa Moor markasının, sezon için kurguladığı lüks mimari evi ve ofis aksesuarlarına uygun olacak şekilde tasarladım. İpek, uçuş uçuş ve sezonun rengi kahve detaylara sahip bir tablo…<br /><br />Tablonun adet ölçüsü: 65x125 cm - cam baskıdır.",
   },
   {
     numeral: "IV",
-    image:
-      "https://commons.wikimedia.org/wiki/Special:FilePath/Gustav_Klimt_016.jpg?width=950",
+    image: "assets/works/girl-cerceve.webp",
     fields: [
-      { label: "Designed for", value: "The Kiss" },
-      { label: "Date", value: "1907 – 1908" },
-      { label: "Designed by", value: "Gustav Klimt" },
+      { label: "Designed for", value: "" },
+      { label: "Date", value: "" },
+      { label: "Designed by", value: "İlayda Özen" },
     ],
-    title: "Gold,<br />and surrender.",
+    title: "DENGE",
     poem:
-      "Two figures fold into one another,<br />wrapped in a field of gold.<br /><br />The world dissolves around them—<br />only the embrace remains.",
+      "Denge isimli tablomu, Mikasa Moor markası için tasarladığım bu tabloda sulu boya efekti kullandım. Bir kadının içindeki iki farklı ruh halini temsil ettim aslında.<br /><br />Tablonun ölçüsü: 90x120 cm - cam baskıdır.",
+  },
+  {
+    numeral: "V",
+    image: "assets/works/yesil-heykel.webp",
+    fields: [
+      { label: "Designed for", value: "" },
+      { label: "Date", value: "" },
+      { label: "Designed by", value: "İlayda Özen" },
+    ],
+    title: "FEMINEN",
+    poem:
+      "Feminen isimli tablomu, Mikasa Moor markasının daha feminen dokunuşlarda duvar aksesuarı talebi ile tasarladım. Antik Roma mimarisinin birleşiminde yer alan bir kadın heykelinin dansı…<br /><br />Tablonun adet ölçüsü: 65x125 cm - cam baskıdır.",
   },
 ];
 
@@ -98,7 +106,7 @@ function fill(i) {
   // Görsel
   el.img.classList.remove("loaded");
   el.ph.textContent = ""; // yüklenirken isim gösterme
-  el.img.alt = w.fields.find((f) => f.label === "Designed for")?.value || "";
+  el.img.alt = (w.title || "").replace(/<[^>]+>/g, " ").trim();
   el.img.src = w.image;
 }
 

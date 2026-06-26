@@ -228,38 +228,132 @@ em {
 }
 
 /* ---------------- İletişim ---------------- */
-.contact-mail {
-  display: inline-block;
-  font-size: clamp(1.8rem, 5vw, 3.5rem);
+.contact__eyebrow {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  font-size: 0.78rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.4rem;
+}
+
+.contact__title {
+  font-size: clamp(2rem, 5.5vw, 3.6rem);
   font-weight: 400;
+  line-height: 1.05;
   letter-spacing: -0.03em;
-  color: var(--ink);
+  max-width: 16ch;
+  margin-bottom: 1.6rem;
+}
+
+.contact__lead {
+  max-width: 48ch;
+  font-size: clamp(1.05rem, 1.6vw, 1.3rem);
+  line-height: 1.65;
+  color: rgba(242, 242, 242, 0.78);
+  margin-bottom: clamp(2.5rem, 6vw, 4rem);
+}
+
+/* Büyük e-posta bağlantısı */
+.contact__mail {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.55rem;
   text-decoration: none;
-  border-bottom: 1px solid var(--line);
-  padding-bottom: 0.2em;
-  transition: border-color 0.3s ease;
+  margin-bottom: clamp(3rem, 7vw, 5rem);
 }
 
-.contact-mail:hover {
-  border-color: var(--ink);
-}
-
-.contact-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem 2.5rem;
-  margin-top: 3rem;
-}
-
-.contact-links a {
+.contact__mail-label {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
   color: var(--ink-soft);
-  text-decoration: none;
-  font-size: 1rem;
-  letter-spacing: 0.04em;
-  transition: color 0.3s ease;
 }
 
-.contact-links a:hover {
+.contact__mail-addr {
+  position: relative;
+  width: fit-content;
+  font-size: clamp(1.7rem, 5.5vw, 3.4rem);
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.contact__mail-addr::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.12em;
+  width: 100%;
+  height: 1px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contact__mail:hover .contact__mail-addr::after {
+  transform: scaleX(1);
+}
+
+/* Sosyal kanallar */
+.contact__channels {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: clamp(1rem, 2vw, 1.4rem);
+  max-width: 880px;
+}
+
+.channel {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.4rem 1.6rem;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.02);
+  text-decoration: none;
+  color: var(--ink);
+  transition: transform 0.35s ease, border-color 0.35s ease,
+    background 0.35s ease;
+}
+
+.channel:hover {
+  transform: translateY(-4px);
+  border-color: rgba(194, 163, 122, 0.6);
+  background: rgba(194, 163, 122, 0.07);
+}
+
+.channel__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  flex: 1;
+}
+
+.channel__net {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.channel__handle {
+  font-size: 1.05rem;
+  letter-spacing: 0.01em;
+  color: var(--ink);
+}
+
+.channel__arrow {
+  font-size: 1.2rem;
+  color: var(--ink-soft);
+  transition: transform 0.35s ease, color 0.35s ease;
+}
+
+.channel:hover .channel__arrow {
+  transform: translate(3px, -3px);
   color: var(--ink);
 }
 
@@ -701,8 +795,9 @@ em {
     font-size: clamp(0.82rem, 3.2vw, 0.92rem);
   }
 
-  /* İletişim ve diğer sayfa gövdeleri alt çubuğun arkasında kalmasın */
+  /* İletişim ve diğer sayfa gövdeleri: üstte header'ı, altta sekme çubuğunu boşalt */
   .page {
+    padding-top: 6rem;
     padding-bottom: 7rem;
   }
 
