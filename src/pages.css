@@ -808,7 +808,7 @@ em {
 
   /* Galeri: metinler ve görsel sığsın (künye/Marka bloğu daha yukarıda başlasın) */
   .gallery {
-    padding: 2.4rem 1.25rem 7rem;
+    padding: 1.2rem 1.25rem 7rem;
     gap: 1.4rem;
   }
   /* Eser sayacı (01 / 05) mobilde gizli */
