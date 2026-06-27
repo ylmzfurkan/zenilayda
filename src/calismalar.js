@@ -13,63 +13,78 @@ const WORKS = [
     numeral: "I",
     image: "assets/works/vatoz-cerceve.webp",
     fields: [
-      { label: "Desıgned for", value: "Kuzey Home x Mikasa Moor" },
+      { label: "Designed for", value: "Kuzey Home x Mikasa Moor" },
       { label: "Date", value: "2024" },
-      { label: "Desıgned by", value: "İlayda Özen" },
+      { label: "Designed by", value: "İlayda Özen" },
     ],
     title: "VATOZ",
-    poem:
-      "Vatoz isimli tablomu, Mikasa Moor markasının kendi pirinç vatoz aksesuarlarına uyumlu olacak şekilde tasarladım. İlk başta soyut sabit renklerdeki bir arka planda düşündüğüm bu tabloyu, objesi vatoz olduğu için organik bir forma taşıma ihtiyacı hissedip onları kendi yaşam alanına su altına yerleştirdim. Böylece çok daha organik ve akışta olan bir tablo oldu.<br /><br />Tablonun adet ölçüsü: 65x125 cm - cam baskıdır.",
+    poem: {
+      tr: "Vatoz isimli tablomu, Mikasa Moor markasının kendi pirinç vatoz aksesuarlarına uyumlu olacak şekilde tasarladım. İlk başta soyut sabit renklerdeki bir arka planda düşündüğüm bu tabloyu, objesi vatoz olduğu için organik bir forma taşıma ihtiyacı hissedip onları kendi yaşam alanına su altına yerleştirdim. Böylece çok daha organik ve akışta olan bir tablo oldu.<br /><br />Tablonun adet ölçüsü: 65x125 cm - cam baskıdır.",
+      en: "I designed “Vatoz” (Stingray) to complement Mikasa Moor’s own brass stingray accessories. Although I first imagined it set against an abstract background of flat, fixed colours, the subject being a stingray made me feel the need to carry it into a more organic form — so I placed the rays in their own habitat, underwater. The result became a far more organic painting, alive with movement.<br /><br />Piece dimensions: 65×125 cm — printed on glass.",
+    },
   },
   {
     numeral: "II",
     image: "assets/works/sutun.webp",
     fields: [
-      { label: "Desıgned for", value: "Kuzey Home x Mikasa Moor" },
+      { label: "Designed for", value: "Kuzey Home x Mikasa Moor" },
       { label: "Date", value: "2024" },
-      { label: "Desıgned by", value: "İlayda Özen" },
+      { label: "Designed by", value: "İlayda Özen" },
     ],
     title: "SÜTUN",
-    poem:
-      "Sütun isimli tablomu, Mikasa Moor markasının butik koleksiyonu için tasarladım. Antik Roma mimarisinden esinlendiğim bu tasarımda iki farklı sütunu aynı kanvas içinde görüyoruz. Zarif mimari detaylar ve aynı tonlar…<br /><br />Tablonun ölçüsü: 90x120 cm - cam baskıdır.",
+    poem: {
+      tr: "Sütun isimli tablomu, Mikasa Moor markasının butik koleksiyonu için tasarladım. Antik Roma mimarisinden esinlendiğim bu tasarımda iki farklı sütunu aynı kanvas içinde görüyoruz. Zarif mimari detaylar ve aynı tonlar…<br /><br />Tablonun ölçüsü: 90x120 cm - cam baskıdır.",
+      en: "I designed “Sütun” (Column) for Mikasa Moor’s boutique collection. Inspired by ancient Roman architecture, this design brings two different columns together within a single canvas. Elegant architectural details and harmonious tones…<br /><br />Piece dimensions: 90×120 cm — printed on glass.",
+    },
   },
   {
     numeral: "III",
     image: "assets/works/tapinak-tablo.webp",
     fields: [
-      { label: "Desıgned for", value: "Kuzey Home x Mikasa Moor" },
+      { label: "Designed for", value: "Kuzey Home x Mikasa Moor" },
       { label: "Date", value: "2024" },
-      { label: "Desıgned by", value: "İlayda Özen" },
+      { label: "Designed by", value: "İlayda Özen" },
     ],
     title: "TAPINAK",
-    poem:
-      "Tapınak isimli tablomu, Mikasa Moor markasının, sezon için kurguladığı lüks mimari evi ve ofis aksesuarlarına uygun olacak şekilde tasarladım. İpek, uçuş uçuş ve sezonun rengi kahve detaylara sahip bir tablo…<br /><br />Tablonun adet ölçüsü: 65x125 cm - cam baskıdır.",
+    poem: {
+      tr: "Tapınak isimli tablomu, Mikasa Moor markasının, sezon için kurguladığı lüks mimari evi ve ofis aksesuarlarına uygun olacak şekilde tasarladım. İpek, uçuş uçuş ve sezonun rengi kahve detaylara sahip bir tablo…<br /><br />Tablonun adet ölçüsü: 65x125 cm - cam baskıdır.",
+      en: "I designed “Tapınak” (Temple) to suit the luxurious architectural home and office accessories Mikasa Moor envisioned for the season. A painting of flowing silk and the season’s signature brown details…<br /><br />Piece dimensions: 65×125 cm — printed on glass.",
+    },
   },
   {
     numeral: "IV",
     image: "assets/works/girl-cerceve.webp",
     fields: [
-      { label: "Desıgned for", value: "Kuzey Home x Mikasa Moor" },
+      { label: "Designed for", value: "Kuzey Home x Mikasa Moor" },
       { label: "Date", value: "2024" },
-      { label: "Desıgned by", value: "İlayda Özen" },
+      { label: "Designed by", value: "İlayda Özen" },
     ],
     title: "DENGE",
-    poem:
-      "Denge isimli, Mikasa Moor markası için tasarladığım bu tabloda sulu boya efekti kullandım. Bir kadının içindeki iki farklı ruh halini temsil ettim aslında.<br /><br />Tablonun ölçüsü: 90x120 cm - cam baskıdır.",
+    poem: {
+      tr: "Denge isimli, Mikasa Moor markası için tasarladığım bu tabloda sulu boya efekti kullandım. Bir kadının içindeki iki farklı ruh halini temsil ettim aslında.<br /><br />Tablonun ölçüsü: 90x120 cm - cam baskıdır.",
+      en: "In “Denge” (Balance), which I designed for Mikasa Moor, I used a watercolour effect. In truth, I wanted to represent the two different states of mind that live within a single woman.<br /><br />Piece dimensions: 90×120 cm — printed on glass.",
+    },
   },
   {
     numeral: "V",
     image: "assets/works/yesil-heykel.webp",
     fields: [
-      { label: "Desıgned for", value: "Kuzey Home x Mikasa Moor" },
+      { label: "Designed for", value: "Kuzey Home x Mikasa Moor" },
       { label: "Date", value: "2024" },
-      { label: "Desıgned by", value: "İlayda Özen" },
+      { label: "Designed by", value: "İlayda Özen" },
     ],
     title: "FEMINEN",
-    poem:
-      "Feminen isimli tablomu, Mikasa Moor markasının daha feminen dokunuşlarda duvar aksesuarı talebi ile tasarladım. Antik Roma mimarisinin birleşiminde yer alan bir kadın heykelinin dansı…<br /><br />Tablonun adet ölçüsü: 65x125 cm - cam baskıdır.",
+    poem: {
+      tr: "Feminen isimli tablomu, Mikasa Moor markasının daha feminen dokunuşlarda duvar aksesuarı talebi ile tasarladım. Antik Roma mimarisinin birleşiminde yer alan bir kadın heykelinin dansı…<br /><br />Tablonun adet ölçüsü: 65x125 cm - cam baskıdır.",
+      en: "I designed “Feminen” (Feminine) in response to Mikasa Moor’s request for a wall accessory with a softer, more feminine touch. The dance of a female sculpture, set within a fusion of ancient Roman architecture…<br /><br />Piece dimensions: 65×125 cm — printed on glass.",
+    },
   },
 ];
+
+/* Aktif dil (i18n.js tarafından ayarlanır; yoksa tr) */
+function currentLang() {
+  return window.i18nLang === "en" ? "en" : "tr";
+}
 
 /* --------------------------------------------------------- */
 const el = {
@@ -100,7 +115,8 @@ function fill(i) {
     .join("");
 
   el.title.innerHTML = w.title;
-  el.poem.innerHTML = w.poem;
+  el.poem.innerHTML =
+    typeof w.poem === "string" ? w.poem : w.poem[currentLang()] || w.poem.tr;
   el.progress.textContent = `${pad(i + 1)} / ${pad(WORKS.length)}`;
 
   // Görsel
@@ -188,6 +204,9 @@ window.addEventListener(
   },
   { passive: true }
 );
+
+// Dil değişince mevcut eseri seçili dilde yeniden yaz
+window.addEventListener("langchanged", () => fill(index));
 
 // İlk eser
 fill(0);

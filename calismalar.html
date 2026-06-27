@@ -3,17 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Çalışmalar — Zenilayda</title>
+  <title data-i18n="title.works">Çalışmalar — Zenilayda</title>
   <link rel="stylesheet" href="src/pages.css" />
 </head>
 <body class="gallery-page">
   <header class="site-header site-header--ghost">
     <a class="brand" href="index.html">Zenilayda</a>
-    <nav class="site-nav">
-      <a href="calismalar.html" aria-current="page">Çalışmalar</a>
-      <a href="hakkinda.html">Hakkında</a>
-      <a href="iletisim.html">İletişim</a>
-    </nav>
+    <div class="header__right">
+      <nav class="site-nav">
+        <a href="calismalar.html" aria-current="page" data-i18n="nav.works">Çalışmalar</a>
+        <a href="hakkinda.html" data-i18n="nav.about">Hakkında</a>
+        <a href="iletisim.html" data-i18n="nav.contact">İletişim</a>
+      </nav>
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button type="button" class="lang-opt" data-lang="tr">TR</button>
+        <span class="lang-sep" aria-hidden="true">|</span>
+        <button type="button" class="lang-opt" data-lang="en">EN</button>
+      </div>
+    </div>
   </header>
 
   <main class="gallery" id="gallery">
@@ -41,11 +48,12 @@
 
   <!-- Mobil alt sekme çubuğu -->
   <nav class="tabbar" aria-label="Sayfalar">
-    <a href="calismalar.html" aria-current="page">Çalışmalar</a>
-    <a href="hakkinda.html">Hakkında</a>
-    <a href="iletisim.html">İletişim</a>
+    <a href="calismalar.html" aria-current="page" data-i18n="nav.works">Çalışmalar</a>
+    <a href="hakkinda.html" data-i18n="nav.about">Hakkında</a>
+    <a href="iletisim.html" data-i18n="nav.contact">İletişim</a>
   </nav>
 
+  <script src="src/i18n.js"></script>
   <script type="module" src="src/calismalar.js"></script>
 </body>
 </html>

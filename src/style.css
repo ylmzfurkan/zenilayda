@@ -102,6 +102,46 @@ body {
   color: var(--ink);
 }
 
+/* Sağ küme: menü + dil değiştirici */
+.header__right {
+  display: flex;
+  align-items: center;
+  gap: clamp(1.1rem, 2.6vw, 2.2rem);
+  margin-left: auto;
+}
+
+/* Dil değiştirici (TR | EN) */
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  pointer-events: auto;
+}
+
+.lang-opt {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  font-size: clamp(0.78rem, 1.2vw, 0.92rem);
+  letter-spacing: 0.08em;
+  color: var(--ink-soft);
+  transition: color 0.3s ease;
+}
+
+.lang-opt:hover,
+.lang-opt.is-active {
+  color: var(--ink);
+}
+
+.lang-sep {
+  color: var(--ink-soft);
+  opacity: 0.5;
+  font-size: 0.85rem;
+}
+
 /* Hamburger butonu (yalnızca mobilde görünür) */
 .nav-toggle {
   display: none;

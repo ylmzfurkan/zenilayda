@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Zenilayda — Portfolyo</title>
+  <title data-i18n="title.home">Zenilayda — Portfolyo</title>
   <link rel="stylesheet" href="src/style.css" />
   <link rel="preload" as="image" href="assets/websitezenilaydakapak.jpg" />
 </head>
@@ -15,11 +15,18 @@
   <main class="hero">
     <header class="hero__top">
       <span class="hero__mark">Zenilayda</span>
-      <nav class="hero__nav">
-        <a href="calismalar.html">Çalışmalar</a>
-        <a href="hakkinda.html">Hakkında</a>
-        <a href="iletisim.html">İletişim</a>
-      </nav>
+      <div class="header__right">
+        <nav class="hero__nav">
+          <a href="calismalar.html" data-i18n="nav.works">Çalışmalar</a>
+          <a href="hakkinda.html" data-i18n="nav.about">Hakkında</a>
+          <a href="iletisim.html" data-i18n="nav.contact">İletişim</a>
+        </nav>
+        <div class="lang-switch" role="group" aria-label="Language">
+          <button type="button" class="lang-opt" data-lang="tr">TR</button>
+          <span class="lang-sep" aria-hidden="true">|</span>
+          <button type="button" class="lang-opt" data-lang="en">EN</button>
+        </div>
+      </div>
     </header>
 
     <div class="hero-quote">
@@ -39,10 +46,12 @@
 
   <!-- Mobil alt sekme çubuğu -->
   <nav class="tabbar" aria-label="Sayfalar">
-    <a href="calismalar.html">Çalışmalar</a>
-    <a href="hakkinda.html">Hakkında</a>
-    <a href="iletisim.html">İletişim</a>
+    <a href="calismalar.html" data-i18n="nav.works">Çalışmalar</a>
+    <a href="hakkinda.html" data-i18n="nav.about">Hakkında</a>
+    <a href="iletisim.html" data-i18n="nav.contact">İletişim</a>
   </nav>
+
+  <script src="src/i18n.js"></script>
 
   <script type="importmap">
     {

@@ -3,17 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hakkında — Zenilayda</title>
+  <title data-i18n="title.about">Hakkında — Zenilayda</title>
   <link rel="stylesheet" href="src/pages.css" />
 </head>
 <body>
   <header class="site-header site-header--ghost">
     <a class="brand" href="index.html">Zenilayda</a>
-    <nav class="site-nav">
-      <a href="calismalar.html">Çalışmalar</a>
-      <a href="hakkinda.html" aria-current="page">Hakkında</a>
-      <a href="iletisim.html">İletişim</a>
-    </nav>
+    <div class="header__right">
+      <nav class="site-nav">
+        <a href="calismalar.html" data-i18n="nav.works">Çalışmalar</a>
+        <a href="hakkinda.html" aria-current="page" data-i18n="nav.about">Hakkında</a>
+        <a href="iletisim.html" data-i18n="nav.contact">İletişim</a>
+      </nav>
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button type="button" class="lang-opt" data-lang="tr">TR</button>
+        <span class="lang-sep" aria-hidden="true">|</span>
+        <button type="button" class="lang-opt" data-lang="en">EN</button>
+      </div>
+    </div>
   </header>
 
   <main class="about">
@@ -24,46 +31,46 @@
       <aside class="about__facts">
         <dl class="fields">
           <div class="field">
-            <dt>Eğitim</dt>
-            <dd>İstanbul Bilgi Üniversitesi · Görsel İletişim Tasarımı · Yüksek Onur, 2021</dd>
+            <dt data-i18n="about.lblEducation">Eğitim</dt>
+            <dd data-i18n="about.valEducation">İstanbul Bilgi Üniversitesi · Görsel İletişim Tasarımı · Yüksek Onur, 2021</dd>
           </div>
           <div class="field">
-            <dt>Odak</dt>
-            <dd>Dijital Sanat · ~6 Yıl</dd>
+            <dt data-i18n="about.lblFocus">Odak</dt>
+            <dd data-i18n="about.valFocus">Dijital Sanat · ~6 Yıl</dd>
           </div>
           <div class="field">
-            <dt>Marka</dt>
-            <dd>Kuzey Home · Cam Baskı Dijital Tablolar</dd>
+            <dt data-i18n="about.lblBrand">Marka</dt>
+            <dd data-i18n="about.valBrand">Kuzey Home · Cam Baskı Dijital Tablolar</dd>
           </div>
           <div class="field">
-            <dt>Yaklaşım</dt>
-            <dd>Geleneksel Tasarım + Yapay Zekâ Destekli Üretim</dd>
+            <dt data-i18n="about.lblApproach">Yaklaşım</dt>
+            <dd data-i18n="about.valApproach">Geleneksel Tasarım + Yapay Zekâ Destekli Üretim</dd>
           </div>
         </dl>
       </aside>
 
       <!-- Sağ: anlatı -->
       <div class="about__body">
-        <p class="about__lead">
+        <p class="about__lead" data-i18n="about.lead">
           Ben İlayda, istanbulda doğdum, küçüklüğümden beri doğayla, hayvanlarla ve yaşamın kendi akışıyla
           güçlü bir bağ kurdum.
         </p>
 
-        <p>
+        <p data-i18n="about.p2">
           Fotoğraf çekmek, hissettiklerimi yazmak ve sürekli yeni şeyler üretmek,
           zamanla dünyayı algılama biçimimin ayrılmaz bir parçası haline geldi.
           İlhamımı yalnızca gördüklerimden değil, yaşadığım deneyimlerden de
           alıyorum.
         </p>
 
-        <p>
+        <p data-i18n="about.p3">
           Kolay bir yolculuktan gelmiyorum; hayat, beni birçok şeye erken yaşta
           olgunlaşarak bakmaya davet etti. Bazen kendimi büyük bir denizin
           içinde kaybolmuş gibi hissettim. Belki de tüm bu süreç, aslında
           kendimi bulma yolculuğunun ta kendisiydi.
         </p>
 
-        <p>
+        <p data-i18n-html="about.p4">
           <strong>2021</strong> yılında
           <strong>İstanbul Bilgi Üniversitesi Görsel İletişim Tasarımı</strong>
           bölümünden yüksek onur derecesiyle mezun oldum. Yaklaşık altı yıldır dijital
@@ -72,7 +79,7 @@
           görsel bir dili olarak görüyorum.
         </p>
 
-        <p>
+        <p data-i18n-html="about.p5">
           Kendi markamız olan <strong>Kuzey Home</strong> bünyesinde
           <strong>özel cam baskı dijital tablolar</strong> tasarlıyor, farklı
           markalar için özel koleksiyonlar ve görsel dünyalar oluşturuyorum.
@@ -80,7 +87,7 @@
           anlatım dilimi keşfetmeye devam ediyorum.
         </p>
 
-        <p>
+        <p data-i18n="about.p6">
           Geleneksel tasarım yaklaşımını yeni teknolojilerle bir araya getirmeyi
           seviyorum. Bazı çalışmalarımda yapay zekâ destekli üretim
           süreçlerinden faydalanıyor, dijital araçları yaratıcılığın sınırlarını
@@ -89,18 +96,18 @@
           istediği hikâye.
         </p>
 
-        <p>
+        <p data-i18n="about.p7">
           Bugün ürettiğim her şey, biraz geçmişimin, biraz hayallerimin ve biraz
           da hâlâ devam eden kendini keşfetme yolculuğumun bir yansıması.
         </p>
 
         <div class="about__rule"></div>
 
-        <p class="about__quote">
+        <p class="about__quote" data-i18n="about.quote">
           İçinizde ne varsa, onu bulun ve parlamasına izin verin.
         </p>
 
-        <p class="about__sign">
+        <p class="about__sign" data-i18n-html="about.sign">
           Sevgiler,
           <strong>İlayda Özen</strong>
         </p>
@@ -110,9 +117,11 @@
 
   <!-- Mobil alt sekme çubuğu -->
   <nav class="tabbar" aria-label="Sayfalar">
-    <a href="calismalar.html">Çalışmalar</a>
-    <a href="hakkinda.html" aria-current="page">Hakkında</a>
-    <a href="iletisim.html">İletişim</a>
+    <a href="calismalar.html" data-i18n="nav.works">Çalışmalar</a>
+    <a href="hakkinda.html" aria-current="page" data-i18n="nav.about">Hakkında</a>
+    <a href="iletisim.html" data-i18n="nav.contact">İletişim</a>
   </nav>
+
+  <script src="src/i18n.js"></script>
 </body>
 </html>
