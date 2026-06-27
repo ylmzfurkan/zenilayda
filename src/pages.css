@@ -831,9 +831,27 @@ em {
   }
   .about__lead {
     font-size: clamp(1.05rem, 4.2vw, 1.3rem);
+    /* gövdeyle aynı satır aralığı: blok bütün ve düz okunsun (eğik algı gitsin) */
+    line-height: 1.6;
   }
   .about__body p {
     font-size: clamp(0.92rem, 3.4vw, 1.02rem);
+    line-height: 1.6;
+  }
+  /* paragraflar arası boşluğu eşitle/sıkılaştır — bloklar aynı ritimde aksın */
+  .about__body p + p {
+    margin-top: 1rem;
+  }
+  /* künye: etiket ile değeri biraz yaklaştır, blok daha kompakt dursun */
+  .fields {
+    gap: 1.1rem;
+  }
+  .field dt {
+    margin-bottom: 0.25rem;
+  }
+  /* iletişim girişi de gövdeyle aynı tutarlı satır aralığında olsun */
+  .contact__lead {
+    line-height: 1.6;
   }
 }
 
