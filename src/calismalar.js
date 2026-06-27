@@ -86,6 +86,16 @@ function currentLang() {
   return window.i18nLang === "en" ? "en" : "tr";
 }
 
+/* Künye etiketleri yalnızca Türkçe sürümde çevrilir (İngilizcede aynı kalır) */
+const LABEL_TR = {
+  "Designed for": "Marka",
+  Date: "Tarih",
+  "Designed by": "Görsel Tasarımcı",
+};
+function labelFor(label) {
+  return currentLang() === "tr" ? LABEL_TR[label] || label : label;
+}
+
 /* --------------------------------------------------------- */
 const el = {
   gallery: document.getElementById("gallery"),
@@ -110,7 +120,8 @@ function fill(i) {
 
   el.fields.innerHTML = w.fields
     .map(
-      (f) => `<div class="field"><dt>${f.label}</dt><dd>${f.value}</dd></div>`
+      (f) =>
+        `<div class="field"><dt>${labelFor(f.label)}</dt><dd>${f.value}</dd></div>`
     )
     .join("");
 
