@@ -799,7 +799,7 @@ em {
      (başlık, Hakkında'daki "İlayda Özen" ile aynı hizada başlasın; yan boşluk da
      Hakkında ile aynı 1.25rem olsun) */
   .page {
-    padding: 3.75rem 1.25rem 7rem;
+    padding: 3.75rem 1.25rem 7rem 0.75rem;
   }
 
   /* Sosyal kanallar mobilde: kart kenar boşluğu yüzünden içerik sağa kaçıyordu.
@@ -823,7 +823,7 @@ em {
 
   /* Hakkında */
   .about {
-    padding: 3.75rem 1.25rem 7rem;
+    padding: 3.75rem 1.25rem 7rem 0.75rem;
   }
   .about__name {
     font-size: clamp(2rem, 9.5vw, 2.8rem);
