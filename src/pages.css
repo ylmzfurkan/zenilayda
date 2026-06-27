@@ -799,7 +799,7 @@ em {
      (başlık, Hakkında'daki "İlayda Özen" ile aynı hizada başlasın; yan boşluk da
      Hakkında ile aynı 1.25rem olsun) */
   .page {
-    padding: 3.75rem 1.25rem 7rem 0.75rem;
+    padding: 3.75rem 1.25rem 7rem;
   }
 
   /* Sosyal kanallar mobilde: kart kenar boşluğu yüzünden içerik sağa kaçıyordu.
@@ -823,7 +823,7 @@ em {
 
   /* Hakkında */
   .about {
-    padding: 3.75rem 1.25rem 7rem 0.75rem;
+    padding: 3.75rem 1.25rem 7rem;
   }
   .about__name {
     font-size: clamp(2rem, 9.5vw, 2.8rem);
@@ -833,10 +833,13 @@ em {
     font-size: clamp(1.05rem, 4.2vw, 1.3rem);
     /* gövdeyle aynı satır aralığı: blok bütün ve düz okunsun (eğik algı gitsin) */
     line-height: 1.6;
+    /* sağ kenar da eşit bitsin */
+    text-align: justify;
   }
   .about__body p {
     font-size: clamp(0.92rem, 3.4vw, 1.02rem);
     line-height: 1.6;
+    text-align: justify;
   }
   /* paragraflar arası boşluğu eşitle/sıkılaştır — bloklar aynı ritimde aksın */
   .about__body p + p {
@@ -852,6 +855,7 @@ em {
   /* iletişim girişi de gövdeyle aynı tutarlı satır aralığında olsun */
   .contact__lead {
     line-height: 1.6;
+    text-align: justify;
   }
 }
 
