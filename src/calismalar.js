@@ -11,7 +11,7 @@
 const WORKS = [
   {
     numeral: "I",
-    image: "assets/works/vatoz-cerceve.webp",
+    image: "/assets/works/vatoz-cerceve.webp",
     fields: [
       { label: "Designed for", value: "Kuzey Home x Mikasa Moor" },
       { label: "Date", value: "2024" },
@@ -25,7 +25,7 @@ const WORKS = [
   },
   {
     numeral: "II",
-    image: "assets/works/sutun.webp",
+    image: "/assets/works/sutun.webp",
     fields: [
       { label: "Designed for", value: "Kuzey Home x Mikasa Moor" },
       { label: "Date", value: "2024" },
@@ -39,7 +39,7 @@ const WORKS = [
   },
   {
     numeral: "III",
-    image: "assets/works/tapinak-tablo.webp",
+    image: "/assets/works/tapinak-tablo.webp",
     fields: [
       { label: "Designed for", value: "Kuzey Home x Mikasa Moor" },
       { label: "Date", value: "2024" },
@@ -53,7 +53,7 @@ const WORKS = [
   },
   {
     numeral: "IV",
-    image: "assets/works/girl-cerceve.webp",
+    image: "/assets/works/girl-cerceve.webp",
     fields: [
       { label: "Designed for", value: "Kuzey Home x Mikasa Moor" },
       { label: "Date", value: "2024" },
@@ -67,7 +67,7 @@ const WORKS = [
   },
   {
     numeral: "V",
-    image: "assets/works/yesil-heykel.webp",
+    image: "/assets/works/yesil-heykel.webp",
     fields: [
       { label: "Designed for", value: "Kuzey Home x Mikasa Moor" },
       { label: "Date", value: "2024" },

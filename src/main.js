@@ -17,7 +17,7 @@ import { RoomEnvironment } from "three/addons/environments/RoomEnvironment.js";
  * hissi (Noomo gibi), "havuza taş atma" halkası değil.
  */
 
-const IMAGE_URL = "assets/websitezenilaydakapak.jpg";
+const IMAGE_URL = "/assets/websitezenilaydakapak.jpg";
 
 const canvas = document.getElementById("scene");
 const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: false });
