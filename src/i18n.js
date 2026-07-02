@@ -28,7 +28,7 @@
 
       /* --- Ana sayfa hero sözü (her kelime alt alta) --- */
       "hero.quote":
-        '<span class="quote-line">İçimdeki</span><span class="quote-rule quote-rule-wide"></span><span class="quote-line"><em>denizlerden</em></span><span class="quote-rule quote-rule-wide"></span><span class="quote-line">dijital</span><span class="quote-rule quote-rule-wide"></span><span class="quote-line"><em>sanata</em></span>',
+        '<span class="quote-line">İçimdeki</span><span class="quote-rule quote-rule-wide"></span><span class="quote-line"><em>denizlerden</em></span><span class="quote-rule quote-rule-wide"></span><span class="quote-line">dijital</span><span class="quote-rule quote-rule-wide"></span><span class="quote-line"><em>sanata.</em></span>',
 
       /* --- İletişim --- */
       "contact.title": "Birlikte üretelim.",
