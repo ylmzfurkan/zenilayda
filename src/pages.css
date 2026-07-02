@@ -694,19 +694,44 @@ em {
   font-size: clamp(2.8rem, 7vw, 6rem);
   line-height: 1;
   letter-spacing: -0.02em;
-  margin-bottom: clamp(2.5rem, 6vw, 4rem);
+  /* isim, anlatı sütunu (sağ) ile aynı hizada; alt boşluğu grid row-gap veriyor */
+  grid-column: 2;
+  grid-row: 1;
+  align-self: center;
+  margin: 0;
 }
 
 .about__layout {
   display: grid;
   grid-template-columns: minmax(220px, 0.85fr) minmax(0, 1.7fr);
-  gap: clamp(2rem, 6vw, 5rem);
+  column-gap: clamp(2rem, 6vw, 5rem);
+  row-gap: clamp(1.8rem, 4vw, 3rem);
   align-items: start;
 }
 
+/* İsim sağa kayınca solda açılan boşluğa küçük kare profil görseli */
+.about__photo {
+  grid-column: 1;
+  grid-row: 1;
+  justify-self: start;
+  width: clamp(120px, 13vw, 168px);
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 16px;
+  border: 1px solid rgba(212, 175, 55, 0.28);
+}
+
 .about__facts {
+  grid-column: 1;
+  grid-row: 2;
   position: sticky;
   top: clamp(7rem, 14vh, 10rem);
+}
+
+.about__body {
+  grid-column: 2;
+  grid-row: 2;
 }
 
 .about__lead {
@@ -774,9 +799,18 @@ em {
   .about__layout {
     grid-template-columns: 1fr;
   }
-  .about__facts {
-    position: static;
+  /* tek sütuna inince yerleşimi sıfırla ve sırayı belirle */
+  .about__photo,
+  .about__name,
+  .about__facts,
+  .about__body {
+    grid-column: auto;
+    grid-row: auto;
   }
+  .about__name  { order: 1; align-self: start; }
+  .about__photo { order: 2; }
+  .about__facts { order: 3; position: static; }
+  .about__body  { order: 4; }
 }
 
 /* ============================================================ */
