@@ -796,21 +796,29 @@ em {
 }
 
 @media (max-width: 820px) {
+  /* Üst satır: solda görsel, sağında isim (dikey ortalı); altta künye ve metin */
   .about__layout {
-    grid-template-columns: 1fr;
+    grid-template-columns: auto 1fr;
   }
-  /* tek sütuna inince yerleşimi sıfırla ve sırayı belirle */
-  .about__photo,
-  .about__name,
-  .about__facts,
+  .about__photo {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .about__name {
+    grid-column: 2;
+    grid-row: 1;
+    align-self: center;
+    margin: 0;
+  }
+  .about__facts {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    position: static;
+  }
   .about__body {
-    grid-column: auto;
-    grid-row: auto;
+    grid-column: 1 / -1;
+    grid-row: 3;
   }
-  .about__name  { order: 1; align-self: start; }
-  .about__photo { order: 2; }
-  .about__facts { order: 3; position: static; }
-  .about__body  { order: 4; }
 }
 
 /* ============================================================ */
@@ -903,8 +911,9 @@ em {
     padding: 3.75rem 1.25rem 7rem;
   }
   .about__name {
-    font-size: clamp(2rem, 9.5vw, 2.8rem);
-    margin-bottom: clamp(1.6rem, 5vw, 2.4rem);
+    /* görselin yanına sığsın diye biraz küçült; alt boşluk yok (yan yana) */
+    font-size: clamp(1.6rem, 7.5vw, 2.2rem);
+    margin: 0;
   }
   .about__lead {
     font-size: clamp(1.05rem, 4.2vw, 1.3rem);
