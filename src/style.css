@@ -282,6 +282,13 @@ body {
   max-width: 560px;
 }
 
+/* TR hero sözü: iki satır sağa yaslı — 'dijital sanata.' ilk satırın sağ kenarına hizalı */
+.quote-line--tr,
+.quote-rule--tr {
+  margin-left: auto;
+  margin-right: 0;
+}
+
 @media (max-width: 900px) {
   .hero-quote {
     right: auto;
