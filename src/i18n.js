@@ -26,6 +26,10 @@
       "title.about": "Hakkında — Zenilayda",
       "title.contact": "İletişim — Zenilayda",
 
+      /* --- Ana sayfa hero sözü (her kelime alt alta) --- */
+      "hero.quote":
+        '<span class="quote-line">İçimdeki</span><span class="quote-rule quote-rule-wide"></span><span class="quote-line"><em>denizlerden</em></span><span class="quote-rule quote-rule-wide"></span><span class="quote-line">dijital</span><span class="quote-rule quote-rule-wide"></span><span class="quote-line"><em>sanata</em></span>',
+
       /* --- İletişim --- */
       "contact.title": "Birlikte üretelim.",
       "contact.lead":
@@ -73,6 +77,10 @@
       "title.works": "Works — Zenilayda",
       "title.about": "About — Zenilayda",
       "title.contact": "Contact — Zenilayda",
+
+      /* --- Home hero quote --- */
+      "hero.quote":
+        '<span class="quote-line quote-what">where <em>inner </em><em>oceans</em></span><span class="quote-rule quote-rule-wide" style="--rx: 5rem"></span><span class="quote-line quote-through">become <em>stories</em></span><span class="quote-rule quote-rule-wide" style="--rx: 5rem"></span><span class="quote-line quote-change">and <em>stories</em></span><span class="quote-rule quote-rule-wide" style="--rx: 5rem"></span><span class="quote-line quote-reinvention">become <em>digital art.</em></span><span class="quote-rule quote-rule-wide" style="--rx: 5rem"></span>',
 
       /* --- Contact --- */
       "contact.title": "Let's create together.",
