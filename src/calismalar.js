@@ -250,8 +250,7 @@ function hideSwipeHint() {
   hint.appendChild(label);
   document.body.appendChild(hint);
   swipeHint = hint;
-  // Etkileşim olmasa bile bir süre sonra kaybolsun
-  setTimeout(hideSwipeHint, 5000);
+  // İpucu, kullanıcı ilk kez kaydırıp esere geçene kadar durur (go() gizler).
 })();
 
 // İlk eser
