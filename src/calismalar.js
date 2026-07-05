@@ -73,7 +73,7 @@ const WORKS = [
       { label: "Date", value: "2024" },
       { label: "Designed by", value: "İlayda Özen" },
     ],
-    title: "FEMİNEN",
+    title: "FEMINEN",
     poem: {
       tr: "Feminen isimli tablomu, Mikasa Moor markasının daha feminen dokunuşlarda duvar aksesuarı talebi ile tasarladım. Antik Roma mimarisinin birleşiminde yer alan bir kadın heykelinin dansı…<br /><br />Tablonun adet ölçüsü: 65x125 cm - cam baskıdır.",
       en: "I designed “Feminen” (Feminine) in response to Mikasa Moor’s request for a wall accessory with a softer, more feminine touch. The dance of a female sculpture, set within a fusion of ancient Roman architecture…<br /><br />Piece dimensions: 65×125 cm — printed on glass.",
@@ -143,6 +143,8 @@ el.img.addEventListener("error", () => el.img.classList.remove("loaded"));
 function go(dir) {
   if (animating) return;
   animating = true;
+
+  hideSwipeHint(); // ilk gezinmede mobil kaydırma ipucunu gizle
 
   el.gallery.classList.add("is-anim");
 
@@ -218,6 +220,39 @@ window.addEventListener(
 
 // Dil değişince mevcut eseri seçili dilde yeniden yaz
 window.addEventListener("langchanged", () => fill(index));
+
+/* --- Mobil kaydırma ipucu ---
+ * Kullanıcıya eserler arasında yana kaydırarak geçebileceğini gösterir.
+ * Yalnızca mobilde görünür (CSS), ilk gezinmede ya da birkaç saniye sonra kaybolur.
+ */
+let swipeHint = null;
+function hideSwipeHint() {
+  if (!swipeHint) return;
+  swipeHint.classList.add("is-hidden");
+  const el = swipeHint;
+  swipeHint = null;
+  setTimeout(() => el.remove(), 500);
+}
+(function initSwipeHint() {
+  if (WORKS.length < 2) return; // tek eser varsa gerek yok
+  const hint = document.createElement("div");
+  hint.className = "swipe-hint";
+  hint.setAttribute("aria-hidden", "true");
+  const label = document.createElement("span");
+  label.className = "swipe-hint__text";
+  const setText = () => {
+    label.textContent = currentLang() === "en" ? "Swipe" : "Kaydırın";
+  };
+  setText();
+  window.addEventListener("langchanged", setText);
+  hint.innerHTML =
+    '<span class="swipe-hint__chevrons"><i></i><i></i><i></i></span>';
+  hint.appendChild(label);
+  document.body.appendChild(hint);
+  swipeHint = hint;
+  // Etkileşim olmasa bile bir süre sonra kaybolsun
+  setTimeout(hideSwipeHint, 5000);
+})();
 
 // İlk eser
 fill(0);

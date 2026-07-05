@@ -822,6 +822,103 @@ em {
 }
 
 /* ============================================================ */
+/* MOBİL KAYDIRMA İPUCU (eserler arası yana kaydırma)           */
+/* ============================================================ */
+.swipe-hint {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .swipe-hint {
+    position: fixed;
+    left: 50%;
+    bottom: 5.2rem;
+    transform: translateX(-50%);
+    z-index: 45;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.5rem 0.95rem;
+    border-radius: 999px;
+    background: rgba(10, 20, 18, 0.5);
+    -webkit-backdrop-filter: blur(18px);
+    backdrop-filter: blur(18px);
+    border: 1px solid rgba(242, 242, 242, 0.18);
+    box-shadow: 0 12px 34px rgba(0, 0, 0, 0.4);
+    color: var(--ink);
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    pointer-events: none;
+    opacity: 0;
+    animation: swipe-hint-in 0.5s ease 0.6s forwards;
+  }
+  .swipe-hint.is-hidden {
+    animation: none;
+    opacity: 0;
+    transition: opacity 0.45s ease;
+  }
+  /* Sağ/sol yön çizgileri (chevron) — kaydırmayı ima eden hareket */
+  .swipe-hint__chevrons {
+    position: relative;
+    display: inline-flex;
+    width: 26px;
+    height: 12px;
+    align-items: center;
+  }
+  .swipe-hint__chevrons i {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-top: 1.5px solid currentColor;
+    border-right: 1.5px solid currentColor;
+    transform: rotate(45deg);
+    opacity: 0;
+    animation: swipe-chevron 1.5s ease-in-out infinite;
+  }
+  .swipe-hint__chevrons i:nth-child(1) {
+    left: 2px;
+    animation-delay: 0s;
+  }
+  .swipe-hint__chevrons i:nth-child(2) {
+    left: 10px;
+    animation-delay: 0.18s;
+  }
+  .swipe-hint__chevrons i:nth-child(3) {
+    left: 18px;
+    animation-delay: 0.36s;
+  }
+}
+
+@keyframes swipe-hint-in {
+  to {
+    opacity: 1;
+  }
+}
+@keyframes swipe-chevron {
+  0% {
+    opacity: 0;
+    transform: translateX(-3px) rotate(45deg);
+  }
+  40% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(4px) rotate(45deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .swipe-hint__chevrons i {
+    animation: none;
+    opacity: 0.8;
+  }
+}
+
+/* ============================================================ */
 /* TELEFON (≤600px) — header sığsın, metinler küçülsün          */
 /* ============================================================ */
 @media (max-width: 600px) {
