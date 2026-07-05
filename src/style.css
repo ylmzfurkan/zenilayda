@@ -358,7 +358,7 @@ body {
   }
   /* Sadece Türkçe: hero sözünü mobilde biraz yukarı al */
   html[lang="tr"] .hero-quote {
-    bottom: 36vh;
+    bottom: 30vh;
   }
 }
 
