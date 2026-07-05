@@ -5,12 +5,12 @@
  *  - Site çok sayfalı (MPA) olduğu için her gezinmede sayfa yeniden yüklenir.
  *    Müziğin kaldığı yerden sürmesi için çalma konumu + açık/kapalı durumu
  *    localStorage'da saklanır.
- *  - Tarayıcılar kullanıcı etkileşimi olmadan otomatik ses çalmayı engeller.
- *    Bu yüzden müzik VARSAYILAN OLARAK KAPALIDIR. Kullanıcı ikona bir kez
- *    dokununca açılır ve bu tercih tüm sayfalarda/oturumlarda hatırlanır.
- *  - Kullanıcı müziği açtıktan sonra başka bir sayfaya geçerse, müzik kaldığı
- *    yerden otomatik sürer; tarayıcı yine de engellerse ilk tıklama/kaydırmada
- *    devreye girer.
+ *  - Müzik VARSAYILAN OLARAK AÇIKTIR. Ancak tarayıcılar kullanıcı etkileşimi
+ *    olmadan otomatik ses çalmayı engeller; bu yüzden ilk ziyarette müzik,
+ *    kullanıcının ilk tıklaması/kaydırması/dokunması ile başlar. Kullanıcı
+ *    ikona basıp kapatırsa bu tercih ("0") tüm sayfalarda/oturumlarda hatırlanır.
+ *  - Sayfalar arası gezinmede müzik kaldığı yerden sürer; tarayıcı engellerse
+ *    yine ilk etkileşimde devreye girer.
  *
  * Sağ altta küçük bir cam (glass) düğme; çalarken hareketli ekolayzer,
  * kapalıyken sessiz simgesi gösterir.
@@ -244,10 +244,11 @@
 
   /* ---------- Başlangıç ---------- */
   updateLabel();
-  if (localStorage.getItem(KEY_ON) === "1") {
-    startPlayback().catch(() => {}); // engellenirse armGesture zaten kuruldu
-  } else if (!localStorage.getItem(KEY_SEEN)) {
-    // İlk ziyaret: ikona nazikçe dikkat çek
-    btn.classList.add("bgm-hint");
+  // Varsayılan: müzik AÇIK. Yalnızca kullanıcı açıkça kapattıysa ("0") sessiz kal.
+  if (localStorage.getItem(KEY_ON) !== "0") {
+    localStorage.setItem(KEY_ON, "1");
+    // Tarayıcı otomatik oynatmayı engellerse müzik ilk tıklama/kaydırma/
+    // dokunmada başlar (startPlayback içindeki armGesture bunu kurar).
+    startPlayback().catch(() => {});
   }
 })();
