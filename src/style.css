@@ -356,6 +356,10 @@ body {
   .hero-quote .quote-rule {
     margin-inline: auto;
   }
+  /* Sadece Türkçe: hero sözünü mobilde biraz yukarı al */
+  html[lang="tr"] .hero-quote {
+    bottom: 24vh;
+  }
 }
 
 /* ============================================================ */
