@@ -537,8 +537,8 @@ em {
 .stage__frame {
   position: relative;
   max-height: 66vh;
-  background: linear-gradient(135deg, #161616, #0a0a0a);
-  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.6);
+  background: transparent;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.28);
   overflow: hidden;
   cursor: pointer;
 }
