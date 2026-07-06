@@ -19,7 +19,18 @@ import { RoomEnvironment } from "three/addons/environments/RoomEnvironment.js";
 
 const IMAGE_URL = "/assets/websitezenilaydakapak.jpg";
 
-const canvas = document.getElementById("scene");
+let canvas = document.getElementById("scene");
+if (!canvas) {
+  // SPA gezinmesinde kanvas gövdede yoksa oluştur (kalıcı arka plan katmanı)
+  canvas = document.createElement("canvas");
+  canvas.id = "scene";
+  document.body.prepend(canvas);
+}
+canvas.setAttribute("data-spa-persist", ""); // SPA geçişlerinde silinmesin
+// Kritik konumlandırmayı satır-içi ver: style.css kaldırılsa bile (diğer
+// sayfalara SPA geçişinde) kanvas hep tam ekran, en arkada kalsın — akışa
+// girip içeriği aşağı itmesin.
+canvas.style.cssText = "position:fixed;inset:0;width:100vw;height:100vh;display:block;z-index:0";
 const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: false });
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 renderer.setSize(window.innerWidth, window.innerHeight);
@@ -579,8 +590,12 @@ window.addEventListener(
 /* ------------------------------------------------------------------ */
 const clock = new THREE.Clock();
 
+let rafId = 0; // render döngüsü kimliği
+let paused = false; // SPA: diğer sayfalardayken render'ı boş geçir
+
 function animate() {
-  requestAnimationFrame(animate);
+  rafId = requestAnimationFrame(animate);
+  if (paused) return; // gizliyken hiçbir GPU işi yapma, döngüyü canlı tut
   const delta = clock.getDelta();
   const time = clock.elapsedTime;
 
@@ -646,6 +661,27 @@ function animate() {
   renderer.render(waterScene, camera);
 }
 animate();
+
+/* ------------------------------------------------------------------ */
+/* 7. SPA ENTEGRASYONU — sahne bir kez kurulur, asla yeniden yaratılmaz */
+/*    Sayfa değişince yalnızca render döngüsü duraklatılır/sürdürülür.  */
+/*    WebGL bağlamı hep canlı kalır → 3D görünüm bozulmaz.              */
+/* ------------------------------------------------------------------ */
+// Görünürlüğü yönlendirici (spa.js) yönetir. Burada render döngüsünü İPTAL
+// ETMEDEN yalnızca "boş geçirme" bayrağını çeviriyoruz; böylece WebGL bağlamı
+// hiç durdurulup yeniden başlatılmaz (3D en güvenli şekilde korunur).
+function pauseScene() {
+  paused = true;
+}
+function resumeScene() {
+  if (paused) {
+    paused = false;
+    clock.getDelta(); // uzun boşluk sonrası delta sıçramasını sıfırla
+  }
+}
+if (window.SPA) {
+  window.SPA.register("home", { mount: resumeScene, unmount: pauseScene });
+}
 
 /* ------------------------------------------------------------------ */
 /* 6. RESIZE                                                           */

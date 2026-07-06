@@ -104,6 +104,7 @@
   btn.type = "button";
   btn.className = "bgm-btn";
   btn.setAttribute("aria-pressed", "false");
+  btn.setAttribute("data-spa-persist", ""); // SPA geçişlerinde silinmesin
   btn.innerHTML =
     '<span class="bgm-eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span>' +
     '<span class="bgm-slash" aria-hidden="true"></span>';
