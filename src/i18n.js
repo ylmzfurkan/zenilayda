@@ -45,7 +45,7 @@
         "İstanbul Bilgi Üniversitesi · Görsel İletişim Tasarımı · Yüksek Onur, 2021",
       "about.valFocus": "Dijital Sanat · ~6 Yıl",
       "about.valBrand": "Kuzey Home · Cam Baskı Dijital Tablolar",
-      "about.valApproach": "Geleneksel Tasarım + Yapay Zekâ Destekli Üretim",
+      "about.valApproach": "Dijital Tasarım + Yapay Zekâ Destekli Üretim",
 
       /* --- Hakkında: anlatı --- */
       "about.lead":
@@ -97,7 +97,7 @@
         "İstanbul Bilgi University · Visual Communication Design · High Honors, 2021",
       "about.valFocus": "Digital Art · ~6 Years",
       "about.valBrand": "Kuzey Home · Digital Prints on Glass",
-      "about.valApproach": "Traditional Design + AI-Assisted Production",
+      "about.valApproach": "Digital Design + AI-Assisted Production",
 
       /* --- About: narrative --- */
       "about.lead":
