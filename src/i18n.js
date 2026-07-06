@@ -175,6 +175,9 @@
     applyLang(getLang());
   }
 
+  // SPA yönlendiricisi, içerik değişince çeviriyi yeniden uygulamak için çağırır
+  window.applyI18n = init;
+
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", init);
   } else {

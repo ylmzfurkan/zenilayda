@@ -19,7 +19,14 @@ import { RoomEnvironment } from "three/addons/environments/RoomEnvironment.js";
 
 const IMAGE_URL = "/assets/websitezenilaydakapak.jpg";
 
-const canvas = document.getElementById("scene");
+let canvas = document.getElementById("scene");
+if (!canvas) {
+  // SPA gezinmesinde kanvas gövdede yoksa oluştur (kalıcı arka plan katmanı)
+  canvas = document.createElement("canvas");
+  canvas.id = "scene";
+  document.body.prepend(canvas);
+}
+canvas.setAttribute("data-spa-persist", ""); // SPA geçişlerinde silinmesin
 const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: false });
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 renderer.setSize(window.innerWidth, window.innerHeight);
@@ -579,8 +586,10 @@ window.addEventListener(
 /* ------------------------------------------------------------------ */
 const clock = new THREE.Clock();
 
+let rafId = 0; // render döngüsü kimliği (SPA duraklat/devam için)
+
 function animate() {
-  requestAnimationFrame(animate);
+  rafId = requestAnimationFrame(animate);
   const delta = clock.getDelta();
   const time = clock.elapsedTime;
 
@@ -646,6 +655,29 @@ function animate() {
   renderer.render(waterScene, camera);
 }
 animate();
+
+/* ------------------------------------------------------------------ */
+/* 7. SPA ENTEGRASYONU — sahne bir kez kurulur, asla yeniden yaratılmaz */
+/*    Sayfa değişince yalnızca render döngüsü duraklatılır/sürdürülür.  */
+/*    WebGL bağlamı hep canlı kalır → 3D görünüm bozulmaz.              */
+/* ------------------------------------------------------------------ */
+function pauseScene() {
+  if (rafId) {
+    cancelAnimationFrame(rafId);
+    rafId = 0;
+  }
+  canvas.style.display = "none"; // diğer sayfalarda görünmesin
+}
+function resumeScene() {
+  canvas.style.display = "";
+  if (!rafId) {
+    clock.getDelta(); // uzun duraklama sonrası delta sıçramasını sıfırla
+    animate();
+  }
+}
+if (window.SPA) {
+  window.SPA.register("home", { mount: resumeScene, unmount: pauseScene });
+}
 
 /* ------------------------------------------------------------------ */
 /* 6. RESIZE                                                           */

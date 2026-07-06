@@ -12,8 +12,7 @@
   <link rel="preload" as="image" href="/assets/websitezenilaydakapak.jpg" />
 </head>
 <body>
-  <!-- WebGL su dalgası arka planı buraya render edilir -->
-  <canvas id="scene"></canvas>
+  <!-- WebGL su dalgası arka planı main.js tarafından oluşturulur (SPA'da kalıcı) -->
 
   <!-- Üst katman: kahraman bölümü -->
   <main class="hero">
@@ -67,5 +66,6 @@
     }
   </script>
   <script type="module" src="/src/main.js"></script>
+  <script type="module" src="/src/spa.js"></script>
 </body>
 </html>
