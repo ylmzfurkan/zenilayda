@@ -84,18 +84,32 @@
     document.head.appendChild(link);
   }
 
-  /* --- Gövde içeriğini değiştir; [data-spa-persist] düğümlerini koru --- */
+  /* --- Kanvas (3D arka plan) görünürlüğü — yalnızca ana sayfada göster --- */
+  function setCanvasVisible(vis) {
+    const cv = document.getElementById("scene");
+    if (cv) cv.style.display = vis ? "block" : "none";
+  }
+
+  /* --- Gövde içeriğini değiştir; [data-spa-persist] düğümlerini koru ---
+   * Sağlam yöntem: persist düğümleri ayır, gövdeyi tamamen boşalt, persist'i
+   * geri koy, sonra yeni içeriği ekle. Böylece kalıcı kanvas/müzik butonu
+   * hiçbir kenar durumda kaybolmaz.
+   */
   function swapBody(doc) {
-    // Persist olmayan mevcut çocukları kaldır
-    Array.prototype.slice.call(document.body.children).forEach((el) => {
-      if (!el.hasAttribute("data-spa-persist")) el.remove();
-    });
-    // Yeni gövdenin çocuklarını ekle (persist ve script hariç)
-    const persistOwner = document.body;
+    const persist = Array.prototype.slice.call(
+      document.body.querySelectorAll(":scope > [data-spa-persist]")
+    );
+    // Gövdeyi boşalt (persist düğümler hafızada referanslı, güvende)
+    while (document.body.firstChild) {
+      document.body.removeChild(document.body.firstChild);
+    }
+    // Persist düğümleri geri koy (kanvas, müzik butonu — durumları korunur)
+    persist.forEach((n) => document.body.appendChild(n));
+    // Yeni içeriği ekle (persist ve script hariç)
     Array.prototype.slice.call(doc.body.children).forEach((el) => {
       if (el.hasAttribute && el.hasAttribute("data-spa-persist")) return;
       if (el.tagName === "SCRIPT") return; // script'leri elle yönetiyoruz
-      persistOwner.appendChild(document.importNode(el, true));
+      document.body.appendChild(document.importNode(el, true));
     });
   }
 
@@ -126,6 +140,7 @@
     swapStylesheet(doc);
     document.title = doc.title || document.title;
     swapBody(doc);
+    setCanvasVisible(key === "home"); // 3D yalnızca ana sayfada görünür
 
     // 3) Çeviriyi yeni içeriğe uygula
     if (window.applyI18n) window.applyI18n();
@@ -205,6 +220,7 @@
             /* yut */
           }
         }
+        setCanvasVisible(key0 === "home"); // ilk yüklemede kanvas görünürlüğü
       })
       .catch((e) => console.warn("[SPA] ilk yükleme:", e));
   }

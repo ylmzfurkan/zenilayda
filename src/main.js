@@ -27,6 +27,10 @@ if (!canvas) {
   document.body.prepend(canvas);
 }
 canvas.setAttribute("data-spa-persist", ""); // SPA geçişlerinde silinmesin
+// Kritik konumlandırmayı satır-içi ver: style.css kaldırılsa bile (diğer
+// sayfalara SPA geçişinde) kanvas hep tam ekran, en arkada kalsın — akışa
+// girip içeriği aşağı itmesin.
+canvas.style.cssText = "position:fixed;inset:0;width:100vw;height:100vh;display:block;z-index:0";
 const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: false });
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 renderer.setSize(window.innerWidth, window.innerHeight);
@@ -586,10 +590,12 @@ window.addEventListener(
 /* ------------------------------------------------------------------ */
 const clock = new THREE.Clock();
 
-let rafId = 0; // render döngüsü kimliği (SPA duraklat/devam için)
+let rafId = 0; // render döngüsü kimliği
+let paused = false; // SPA: diğer sayfalardayken render'ı boş geçir
 
 function animate() {
   rafId = requestAnimationFrame(animate);
+  if (paused) return; // gizliyken hiçbir GPU işi yapma, döngüyü canlı tut
   const delta = clock.getDelta();
   const time = clock.elapsedTime;
 
@@ -661,18 +667,16 @@ animate();
 /*    Sayfa değişince yalnızca render döngüsü duraklatılır/sürdürülür.  */
 /*    WebGL bağlamı hep canlı kalır → 3D görünüm bozulmaz.              */
 /* ------------------------------------------------------------------ */
+// Görünürlüğü yönlendirici (spa.js) yönetir. Burada render döngüsünü İPTAL
+// ETMEDEN yalnızca "boş geçirme" bayrağını çeviriyoruz; böylece WebGL bağlamı
+// hiç durdurulup yeniden başlatılmaz (3D en güvenli şekilde korunur).
 function pauseScene() {
-  if (rafId) {
-    cancelAnimationFrame(rafId);
-    rafId = 0;
-  }
-  canvas.style.display = "none"; // diğer sayfalarda görünmesin
+  paused = true;
 }
 function resumeScene() {
-  canvas.style.display = "";
-  if (!rafId) {
-    clock.getDelta(); // uzun duraklama sonrası delta sıçramasını sıfırla
-    animate();
+  if (paused) {
+    paused = false;
+    clock.getDelta(); // uzun boşluk sonrası delta sıçramasını sıfırla
   }
 }
 if (window.SPA) {
