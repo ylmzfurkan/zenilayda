@@ -557,6 +557,12 @@ em {
   opacity: 1;
 }
 
+/* Şeffaf arka planlı eserlerde (ör. yuvarlak modeller) dikdörtgen
+   çerçeve gölgesi zeminde kutu gibi görünür; bu yüzden gizlenir. */
+.stage__frame.is-transparent {
+  box-shadow: none;
+}
+
 .stage__ph {
   position: absolute;
   inset: 0;
