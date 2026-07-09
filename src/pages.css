@@ -15,6 +15,25 @@
   font-display: swap;
 }
 
+/* Bodoni Moda — TheSeasons'a benzer yüksek kontrastlı zarif serif; tam Türkçe
+   glif desteği (İ, ı, ş, ğ, ö, ç). Değişken ağırlıklı italik font. */
+@font-face {
+  font-family: "BodoniModa";
+  src: url("../assets/fonts/BodoniModa-Italic.ttf") format("truetype");
+  font-style: italic;
+  font-weight: 400 900;
+  font-display: swap;
+}
+
+/* Playball — el yazısı (script) font; tam Türkçe glif desteği. */
+@font-face {
+  font-family: "Playball";
+  src: url("../assets/fonts/Playball-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
 :root {
   --ink: #f2f2f2;
   --ink-soft: rgba(242, 242, 242, 0.55);
@@ -596,13 +615,19 @@ em {
 
 /* ---- Sağ: metin ---- */
 .gallery__title {
-  font-family: "TheSeasons", serif;
-  font-style: italic;
+  font-family: "Playball", "BodoniModa", "TheSeasons", serif;
+  font-style: normal;
   font-weight: 400;
-  font-size: clamp(2.2rem, 3.4vw, 3.6rem);
-  line-height: 1.05;
-  letter-spacing: -0.01em;
+  font-size: clamp(1.6rem, 2.5vw, 2.6rem);
+  line-height: 1.25;
+  letter-spacing: 0.02em;
+  word-spacing: 0.14em;
   margin-bottom: 1.1rem;
+}
+
+/* İki satıra bölünmesi istenen başlıklarda alt satır tek parça kalsın */
+.gallery__title .t-nowrap {
+  white-space: nowrap;
 }
 
 .gallery__poem {
@@ -963,6 +988,10 @@ em {
   .gallery__title {
     font-size: clamp(2rem, 9vw, 2.8rem);
     margin-bottom: 2rem;
+  }
+  /* Mobilde dar ekranda taşmasın; gerekirse alt satır sarabilir */
+  .gallery__title .t-nowrap {
+    white-space: normal;
   }
   .gallery__poem {
     font-size: 0.8rem;
