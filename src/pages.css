@@ -988,6 +988,9 @@ em {
   .gallery__title {
     font-size: clamp(2rem, 9vw, 2.8rem);
     margin-bottom: 2rem;
+    /* Mobilde başlık kelimeleri çok geniş durmasın */
+    letter-spacing: 0;
+    word-spacing: normal;
   }
   /* Mobilde dar ekranda taşmasın; gerekirse alt satır sarabilir */
   .gallery__title .t-nowrap {
