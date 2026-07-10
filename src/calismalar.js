@@ -30,7 +30,7 @@
       },
       poem: {
         tr: "Altın Çağ koleksiyonu için tasarladığım bu tabloda Tahtın gücü Kanuni ve zekâsı ile ünlü Hürrem Sultan var. Bu tabloda da ikisi birlikte varoluyor.<br /><br />Tablonun adet ölçüsü: 95x125 cm - cam baskıdır.",
-        en: "In this piece, which I designed for the Golden Age (Altın Çağ) collection, stand Süleyman — the might of the throne — and Hürrem Sultan, renowned for her intelligence. Here, once more, the two come into being together.<br /><br />Piece dimensions: 95×125 cm — printed on glass.",
+        en: "Created for the Golden Age Collection, this piece brings together Suleiman the Magnificent, the mighty ruler of the Ottoman Empire, and Hürrem Sultan, celebrated for her remarkable intelligence, political influence, and enduring legacy. Once again, these two iconic figures come to life side by side, symbolizing the power, passion, and complexity of one of history's most extraordinary partnerships.<br /><br />Piece dimensions: 95×125 cm — printed on glass.",
       },
     },
     {
