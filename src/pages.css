@@ -149,6 +149,11 @@ em {
   transition: color 0.3s ease;
 }
 
+/* Son dil butonunun (EN) harf-aralığı kuyruğunu iptal et (sağ kenar = sol kenar) */
+.lang-switch .lang-opt:last-child {
+  margin-right: -0.08em;
+}
+
 .lang-opt:hover {
   color: var(--ink);
 }
