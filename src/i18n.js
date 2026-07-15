@@ -17,12 +17,15 @@
     tr: {
       /* --- gezinme --- */
       "nav.works": "Çalışmalar",
+      "nav.process": "Yaratıcı Süreç",
+      "nav.processShort": "Süreç",
       "nav.about": "Hakkında",
       "nav.contact": "İletişim",
 
       /* --- sekme başlıkları --- */
       "title.home": "Zenilayda — Portfolyo",
       "title.works": "Çalışmalar — Zenilayda",
+      "title.process": "Yaratıcı Süreç — Zenilayda",
       "title.about": "Hakkında — Zenilayda",
       "title.contact": "İletişim — Zenilayda",
 
@@ -69,12 +72,15 @@
     en: {
       /* --- navigation --- */
       "nav.works": "Works",
+      "nav.process": "Creative Process",
+      "nav.processShort": "Process",
       "nav.about": "About",
       "nav.contact": "Contact",
 
       /* --- tab titles --- */
       "title.home": "Zenilayda — Portfolio",
       "title.works": "Works — Zenilayda",
+      "title.process": "Creative Process — Zenilayda",
       "title.about": "About — Zenilayda",
       "title.contact": "Contact — Zenilayda",
 

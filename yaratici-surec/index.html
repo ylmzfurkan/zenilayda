@@ -7,16 +7,16 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
-  <title data-i18n="title.works">Çalışmalar — Zenilayda</title>
+  <title data-i18n="title.process">Yaratıcı Süreç — Zenilayda</title>
   <link rel="stylesheet" href="/src/pages.css" />
 </head>
-<body class="gallery-page">
+<body class="process-page">
   <header class="site-header site-header--ghost">
     <a class="brand" href="/" lang="tr">Zenilayda</a>
     <div class="header__right">
       <nav class="site-nav">
-        <a href="/calismalar/" aria-current="page" data-i18n="nav.works">Çalışmalar</a>
-        <a href="/yaratici-surec/" data-i18n="nav.process">Yaratıcı Süreç</a>
+        <a href="/calismalar/" data-i18n="nav.works">Çalışmalar</a>
+        <a href="/yaratici-surec/" aria-current="page" data-i18n="nav.process">Yaratıcı Süreç</a>
         <a href="/hakkinda/" data-i18n="nav.about">Hakkında</a>
         <a href="/iletisim/" data-i18n="nav.contact">İletişim</a>
       </nav>
@@ -28,33 +28,29 @@
     </div>
   </header>
 
-  <main class="gallery" id="gallery">
-    <!-- Sol: künye -->
-    <aside class="gallery__col gallery__info">
-      <dl class="fields" id="g-fields"></dl>
-    </aside>
+  <!-- Yatay slayt: PDF'in her sayfası tek tek gösterilir (src/surec.js) -->
+  <main class="process" id="process">
+    <button class="process__arrow process__arrow--prev" id="p-prev" type="button" aria-label="Önceki">&#8249;</button>
 
-    <!-- Orta: eser (tıklayınca sonrakine geçer) -->
-    <figure class="gallery__col gallery__stage">
-      <div class="stage__frame" id="g-stage">
-        <img id="g-img" alt="" />
-        <div class="stage__ph" id="g-ph"></div>
-      </div>
+    <figure class="process__stage" id="p-stage">
+      <img class="process__img" id="p-img" alt="" width="2153" height="1238" decoding="async" fetchpriority="high" />
     </figure>
 
-    <!-- Sağ: metin -->
-    <aside class="gallery__col gallery__text">
-      <h2 class="gallery__title" id="g-title"></h2>
-      <div class="gallery__poem" id="g-poem"></div>
-    </aside>
+    <button class="process__arrow process__arrow--next" id="p-next" type="button" aria-label="Sonraki">&#8250;</button>
 
-    <div class="gallery__progress" id="g-progress"></div>
+    <div class="process__meta" aria-hidden="true">
+      <div class="process__bar"><span id="p-bar"></span></div>
+      <div class="process__progress" id="p-progress">01 / 22</div>
+    </div>
+
+    <!-- Mobil: tüm sayfalar alt alta (dikey kaydırma). JS doldurur. -->
+    <div class="process__scroll" id="p-scroll"></div>
   </main>
 
   <!-- Mobil alt sekme çubuğu -->
   <nav class="tabbar" aria-label="Sayfalar">
-    <a href="/calismalar/" aria-current="page" data-i18n="nav.works">Çalışmalar</a>
-    <a href="/yaratici-surec/" data-i18n="nav.processShort">Süreç</a>
+    <a href="/calismalar/" data-i18n="nav.works">Çalışmalar</a>
+    <a href="/yaratici-surec/" aria-current="page" data-i18n="nav.processShort">Süreç</a>
     <a href="/hakkinda/" data-i18n="nav.about">Hakkında</a>
     <a href="/iletisim/" data-i18n="nav.contact">İletişim</a>
   </nav>
@@ -70,7 +66,6 @@
       }
     }
   </script>
-  <script type="module" src="/src/calismalar.js"></script>
   <script type="module" src="/src/spa.js"></script>
 </body>
 </html>

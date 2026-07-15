@@ -42,6 +42,7 @@
     const p = pathname.replace(/index\.html$/, "").replace(/\/+$/, "/");
     if (p === "/" || p === "") return "home";
     if (p.indexOf("/calismalar") === 0) return "works";
+    if (p.indexOf("/yaratici-surec") === 0) return "process";
     if (p.indexOf("/hakkinda") === 0) return "about";
     if (p.indexOf("/iletisim") === 0) return "contact";
     return null; // bilinmeyen -> klasik gezinme
@@ -52,6 +53,7 @@
     if (registry[key]) return;
     if (key === "home") await import("/src/main.js");
     else if (key === "works") await import("/src/calismalar.js");
+    else if (key === "process") await import("/src/surec.js");
     // about / contact: modül yok
   }
 
