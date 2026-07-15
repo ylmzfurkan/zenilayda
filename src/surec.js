@@ -3,8 +3,8 @@
  *
  * Masaüstü: statik "pipeline" (akış şeması). Kartlar HTML'de hazır durur;
  *   bir kartın görseline tıklanınca ilgili PDF sayfası tam ekran (lightbox)
- *   açılır. Görseller: /assets/creative-process/en-01.webp ... en-22.webp
- *   (PDF v2'nin 22 sayfası 300dpi → webp).
+ *   açılır. Görseller dile göre: TR sitede tr-01.webp…tr-22.webp,
+ *   EN sitede en-01.webp…en-22.webp (PDF'in 22 sayfası 300dpi → webp).
  *
  * Mobil (≤600px): PDF sayfaları alt alta (dikey kaydırma). JS ile tembel
  *   yüklemeyle oluşturulur — masaüstü pipeline mobilde CSS ile gizlidir.
@@ -22,9 +22,14 @@
     return String(n).padStart(2, "0");
   }
 
+  /* Aktif dile göre görsel öneki: TR sitede Türkçe PDF, EN sitede İngilizce. */
+  function prefix() {
+    return window.i18nLang === "en" ? "en-" : "tr-";
+  }
+
   /* Sayfa görselinin yolu. (i: 0 tabanlı) */
   function srcFor(i) {
-    return BASE + "en-" + pad(i + 1) + ".webp";
+    return BASE + prefix() + pad(i + 1) + ".webp";
   }
 
   let el = {};
@@ -48,6 +53,27 @@
       frag.appendChild(img);
     }
     el.scroll.appendChild(frag);
+  }
+
+  /* --- Dil değişince görselleri güncelle (masaüstü + mobil + lightbox) --- */
+  function syncPipe() {
+    if (!el.pipe) return;
+    el.pipe.querySelectorAll(".pipe__thumb").forEach((btn) => {
+      const page = parseInt(btn.getAttribute("data-page"), 10);
+      const img = btn.querySelector("img");
+      if (img && page >= 1) img.src = srcFor(page - 1);
+    });
+  }
+  function syncScroll() {
+    if (!el.scroll) return;
+    el.scroll.querySelectorAll("img").forEach((img, i) => {
+      img.src = srcFor(i);
+    });
+  }
+  function onLangChange() {
+    syncPipe();
+    syncScroll();
+    if (el.lb && el.lb.classList.contains("is-open")) lbRender();
   }
 
   /* --- Lightbox (masaüstü pipeline kartından PDF sayfasını büyüt) ---
@@ -155,6 +181,8 @@
     lbOn = false;
 
     attachLightbox();
+    syncPipe(); // masaüstü kartları aktif dile göre ayarla (kayıtlı dil EN olabilir)
+    window.addEventListener("langchanged", onLangChange);
 
     mq = window.matchMedia("(max-width: 600px)");
     if (mq.addEventListener) mq.addEventListener("change", onMode);
@@ -166,6 +194,7 @@
   function unmount() {
     detachLightbox();
     closeLightbox();
+    window.removeEventListener("langchanged", onLangChange);
     if (mq) {
       if (mq.removeEventListener) mq.removeEventListener("change", onMode);
       else if (mq.removeListener) mq.removeListener(onMode);
