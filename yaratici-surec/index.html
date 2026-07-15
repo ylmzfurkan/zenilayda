@@ -28,24 +28,222 @@
     </div>
   </header>
 
-  <!-- Yatay slayt: PDF'in her sayfası tek tek gösterilir (src/surec.js) -->
   <main class="process" id="process">
-    <button class="process__arrow process__arrow--prev" id="p-prev" type="button" aria-label="Önceki">&#8249;</button>
+    <!-- ===================== MASAÜSTÜ: PIPELINE ===================== -->
+    <!-- PDF'in 22 sayfası adım adım. Her adımın başlığı o sayfayla ilgili.
+         Kart görseline tıklayınca ilgili PDF sayfası tam ekran açılır. -->
+    <section class="pipe" aria-label="Creative Process" lang="en">
+      <header class="pipe__head">
+        <h1 class="pipe__title-main">Creative Process</h1>
+        <p class="pipe__lead">From concept to artwork — the journey of each piece</p>
+        <span class="pipe__rule" aria-hidden="true"></span>
+      </header>
 
-    <figure class="process__stage" id="p-stage">
-      <img class="process__img" id="p-img" alt="" width="2153" height="1238" decoding="async" fetchpriority="high" />
-    </figure>
+      <!-- Satır 1 · 01–06 (soldan sağa) -->
+      <div class="pipe__row pipe__row--exit-right">
+        <article class="pipe__node">
+          <span class="pipe__badge">01</span>
+          <h2 class="pipe__title">Portfolio</h2>
+          <p class="pipe__sub">Selected Works</p>
+          <button class="pipe__thumb" type="button" data-page="1" aria-label="View page 1">
+            <img src="/assets/creative-process/en-01.webp" alt="Portfolio — selected works" loading="lazy" width="2153" height="1238" />
+          </button>
+        </article>
+        <article class="pipe__node">
+          <span class="pipe__badge">02</span>
+          <h2 class="pipe__title">About the Portfolio</h2>
+          <p class="pipe__sub">The Creative Journey</p>
+          <button class="pipe__thumb" type="button" data-page="2" aria-label="View page 2">
+            <img src="/assets/creative-process/en-02.webp" alt="About the portfolio" loading="lazy" width="2153" height="1238" />
+          </button>
+        </article>
+        <article class="pipe__node">
+          <span class="pipe__badge">03</span>
+          <h2 class="pipe__title">Interior Section</h2>
+          <p class="pipe__sub">Artworks in Spaces</p>
+          <button class="pipe__thumb" type="button" data-page="3" aria-label="View page 3">
+            <img src="/assets/creative-process/en-03.webp" alt="Interior section intro" loading="lazy" width="2153" height="1238" />
+          </button>
+        </article>
+        <article class="pipe__node">
+          <span class="pipe__badge">04</span>
+          <h2 class="pipe__title">Stingray</h2>
+          <p class="pipe__sub">Before &amp; After</p>
+          <button class="pipe__thumb" type="button" data-page="4" aria-label="View page 4">
+            <img src="/assets/creative-process/en-04.webp" alt="Stingray — before &amp; after" loading="lazy" width="2153" height="1238" />
+          </button>
+        </article>
+        <article class="pipe__node">
+          <span class="pipe__badge">05</span>
+          <h2 class="pipe__title">Balance</h2>
+          <p class="pipe__sub">Before &amp; After</p>
+          <button class="pipe__thumb" type="button" data-page="5" aria-label="View page 5">
+            <img src="/assets/creative-process/en-05.webp" alt="Balance — before &amp; after" loading="lazy" width="2153" height="1238" />
+          </button>
+        </article>
+        <article class="pipe__node">
+          <span class="pipe__badge">06</span>
+          <h2 class="pipe__title">Black Pearl in Anatolia</h2>
+          <p class="pipe__sub">Before &amp; After</p>
+          <button class="pipe__thumb" type="button" data-page="6" aria-label="View page 6">
+            <img src="/assets/creative-process/en-06.webp" alt="A black pearl in Anatolia — before &amp; after" loading="lazy" width="2153" height="1238" />
+          </button>
+        </article>
+      </div>
 
-    <button class="process__arrow process__arrow--next" id="p-next" type="button" aria-label="Sonraki">&#8250;</button>
+      <!-- Satır 2 · 07–12 (sağdan sola) -->
+      <div class="pipe__row pipe__row--rtl pipe__row--exit-left">
+        <article class="pipe__node">
+          <span class="pipe__badge">07</span>
+          <h2 class="pipe__title">Upside Down World</h2>
+          <p class="pipe__sub">Before &amp; After</p>
+          <button class="pipe__thumb" type="button" data-page="7" aria-label="View page 7">
+            <img src="/assets/creative-process/en-07.webp" alt="Upside down world — before &amp; after" loading="lazy" width="2153" height="1238" />
+          </button>
+        </article>
+        <article class="pipe__node">
+          <span class="pipe__badge">08</span>
+          <h2 class="pipe__title">Camazotz</h2>
+          <p class="pipe__sub">Before &amp; After</p>
+          <button class="pipe__thumb" type="button" data-page="8" aria-label="View page 8">
+            <img src="/assets/creative-process/en-08.webp" alt="Camazotz — before &amp; after" loading="lazy" width="2153" height="1238" />
+          </button>
+        </article>
+        <article class="pipe__node">
+          <span class="pipe__badge">09</span>
+          <h2 class="pipe__title">Girl with a Pearl Earring</h2>
+          <p class="pipe__sub">Before &amp; After</p>
+          <button class="pipe__thumb" type="button" data-page="9" aria-label="View page 9">
+            <img src="/assets/creative-process/en-09.webp" alt="Girl with a pearl earring — before &amp; after" loading="lazy" width="2153" height="1238" />
+          </button>
+        </article>
+        <article class="pipe__node">
+          <span class="pipe__badge">10</span>
+          <h2 class="pipe__title">Veil of Amber</h2>
+          <p class="pipe__sub">Photoshop Refinement</p>
+          <button class="pipe__thumb" type="button" data-page="10" aria-label="View page 10">
+            <img src="/assets/creative-process/en-10.webp" alt="Veil of amber — Photoshop refinement" loading="lazy" width="2153" height="1238" />
+          </button>
+        </article>
+        <article class="pipe__node">
+          <span class="pipe__badge">11</span>
+          <h2 class="pipe__title">Echoes of Black Sculpture</h2>
+          <p class="pipe__sub">Photoshop Refinement</p>
+          <button class="pipe__thumb" type="button" data-page="11" aria-label="View page 11">
+            <img src="/assets/creative-process/en-11.webp" alt="Echoes of black sculpture — Photoshop refinement" loading="lazy" width="2153" height="1238" />
+          </button>
+        </article>
+        <article class="pipe__node">
+          <span class="pipe__badge">12</span>
+          <h2 class="pipe__title">Artwork in Spaces</h2>
+          <p class="pipe__sub">Mockups</p>
+          <button class="pipe__thumb" type="button" data-page="12" aria-label="View page 12">
+            <img src="/assets/creative-process/en-12.webp" alt="Artwork in interior spaces — mockups" loading="lazy" width="2153" height="1238" />
+          </button>
+        </article>
+      </div>
 
-    <div class="process__meta" aria-hidden="true">
-      <div class="process__bar"><span id="p-bar"></span></div>
-      <div class="process__progress" id="p-progress">01 / 22</div>
-    </div>
+      <!-- Satır 3 · 13–18 (soldan sağa) -->
+      <div class="pipe__row pipe__row--exit-right">
+        <article class="pipe__node">
+          <span class="pipe__badge">13</span>
+          <h2 class="pipe__title">Interior Mockup</h2>
+          <p class="pipe__sub">In Living Spaces</p>
+          <button class="pipe__thumb" type="button" data-page="13" aria-label="View page 13">
+            <img src="/assets/creative-process/en-13.webp" alt="Interior mockup — living space" loading="lazy" width="2153" height="1238" />
+          </button>
+        </article>
+        <article class="pipe__node">
+          <span class="pipe__badge">14</span>
+          <h2 class="pipe__title">Interior Mockup</h2>
+          <p class="pipe__sub">Statement Wall</p>
+          <button class="pipe__thumb" type="button" data-page="14" aria-label="View page 14">
+            <img src="/assets/creative-process/en-14.webp" alt="Interior mockup — statement wall" loading="lazy" width="2153" height="1238" />
+          </button>
+        </article>
+        <article class="pipe__node">
+          <span class="pipe__badge">15</span>
+          <h2 class="pipe__title">Interior Mockup</h2>
+          <p class="pipe__sub">Elegant Setting</p>
+          <button class="pipe__thumb" type="button" data-page="15" aria-label="View page 15">
+            <img src="/assets/creative-process/en-15.webp" alt="Interior mockup — elegant setting" loading="lazy" width="2153" height="1238" />
+          </button>
+        </article>
+        <article class="pipe__node">
+          <span class="pipe__badge">16</span>
+          <h2 class="pipe__title">About the Products</h2>
+          <p class="pipe__sub">Kuzey Home</p>
+          <button class="pipe__thumb" type="button" data-page="16" aria-label="View page 16">
+            <img src="/assets/creative-process/en-16.webp" alt="About the products — Kuzey Home" loading="lazy" width="2153" height="1238" />
+          </button>
+        </article>
+        <article class="pipe__node">
+          <span class="pipe__badge">17</span>
+          <h2 class="pipe__title">Screen to Print</h2>
+          <p class="pipe__sub">UV Glass Printing</p>
+          <button class="pipe__thumb" type="button" data-page="17" aria-label="View page 17">
+            <img src="/assets/creative-process/en-17.webp" alt="Screen to print — UV glass printing" loading="lazy" width="2153" height="1238" />
+          </button>
+        </article>
+        <article class="pipe__node">
+          <span class="pipe__badge">18</span>
+          <h2 class="pipe__title">Glass Artwork</h2>
+          <p class="pipe__sub">Real-Life Print</p>
+          <button class="pipe__thumb" type="button" data-page="18" aria-label="View page 18">
+            <img src="/assets/creative-process/en-18.webp" alt="Glass artwork — real-life print" loading="lazy" width="2153" height="1238" />
+          </button>
+        </article>
+      </div>
 
-    <!-- Mobil: tüm sayfalar alt alta (dikey kaydırma). JS doldurur. -->
+      <!-- Satır 4 · 19–22 (sağdan sola) -->
+      <div class="pipe__row pipe__row--rtl">
+        <article class="pipe__node">
+          <span class="pipe__badge">19</span>
+          <h2 class="pipe__title">Glass Artwork</h2>
+          <p class="pipe__sub">Real-Life Print</p>
+          <button class="pipe__thumb" type="button" data-page="19" aria-label="View page 19">
+            <img src="/assets/creative-process/en-19.webp" alt="Glass artwork — real-life print" loading="lazy" width="2153" height="1238" />
+          </button>
+        </article>
+        <article class="pipe__node">
+          <span class="pipe__badge">20</span>
+          <h2 class="pipe__title">Glass Artwork</h2>
+          <p class="pipe__sub">Real-Life Print</p>
+          <button class="pipe__thumb" type="button" data-page="20" aria-label="View page 20">
+            <img src="/assets/creative-process/en-20.webp" alt="Glass artwork — real-life print" loading="lazy" width="2153" height="1238" />
+          </button>
+        </article>
+        <article class="pipe__node">
+          <span class="pipe__badge">21</span>
+          <h2 class="pipe__title">Glass Artwork</h2>
+          <p class="pipe__sub">Real-Life Print</p>
+          <button class="pipe__thumb" type="button" data-page="21" aria-label="View page 21">
+            <img src="/assets/creative-process/en-21.webp" alt="Glass artwork — real-life print" loading="lazy" width="2153" height="1238" />
+          </button>
+        </article>
+        <article class="pipe__node pipe__node--thanks">
+          <span class="pipe__badge">22</span>
+          <h2 class="pipe__title">Thank You</h2>
+          <p class="pipe__sub">For Your Time</p>
+          <button class="pipe__thumb" type="button" data-page="22" aria-label="View page 22">
+            <img src="/assets/creative-process/en-22.webp" alt="Thank you — for your time" loading="lazy" width="2153" height="1238" />
+          </button>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===================== MOBİL: dikey liste (JS doldurur) ===================== -->
     <div class="process__scroll" id="p-scroll"></div>
   </main>
+
+  <!-- PDF sayfası büyütme (lightbox) — masaüstü pipeline için; oklarla gezinilir -->
+  <div class="pipe-lightbox" id="p-lightbox" aria-hidden="true">
+    <button class="pipe-lightbox__close" id="p-lb-close" type="button" aria-label="Kapat">&times;</button>
+    <button class="pipe-lightbox__nav pipe-lightbox__nav--prev" id="p-lb-prev" type="button" aria-label="Önceki">&#8249;</button>
+    <img class="pipe-lightbox__img" id="p-lb-img" alt="" />
+    <button class="pipe-lightbox__nav pipe-lightbox__nav--next" id="p-lb-next" type="button" aria-label="Sonraki">&#8250;</button>
+    <span class="pipe-lightbox__count" id="p-lb-count"></span>
+  </div>
 
   <!-- Mobil alt sekme çubuğu -->
   <nav class="tabbar" aria-label="Sayfalar">
